@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Portfolio — Homepage Directions · Chi Samuel Apeng</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9; }
+  * { box-sizing: border-box; }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="lib/design-canvas.jsx"></script>
+<script type="text/babel" src="directions/shared.jsx"></script>
+<script type="text/babel" src="directions/dir-01-editorial.jsx"></script>
+<script type="text/babel" src="directions/dir-02-terminal.jsx"></script>
+<script type="text/babel" src="directions/dir-03-cinematic.jsx"></script>
+<script type="text/babel" src="directions/dir-04-archive.jsx"></script>
+<script type="text/babel" src="directions/dir-05-brutalist.jsx"></script>
+<script type="text/babel" src="directions/dir-06-warm.jsx"></script>
+
+<script type="text/babel">
+const App = () => (
+  <DesignCanvas>
+    <DCSection id="intro" title="Chi Samuel — Portfolio directions" subtitle="Six homepage explorations. Open any artboard fullscreen to read it properly. Pick one and we'll extend it into case-study + CV + contact.">
+      <DCArtboard id="dir01" label="01 · Editorial Monolith — serif, warm, indexed" width={1280} height={2400}>
+        <Dir01 />
+      </DCArtboard>
+      <DCArtboard id="dir02" label="02 · Terminal — dev-tool, monospace, dark" width={1280} height={2400}>
+        <Dir02 />
+      </DCArtboard>
+      <DCArtboard id="dir03" label="03 · Cinematic — WebGL sphere hero, immersive" width={1280} height={2400}>
+        <Dir03 />
+      </DCArtboard>
+      <DCArtboard id="dir04" label="04 · Archive — dense ledger, tabular, printly" width={1280} height={2400}>
+        <Dir04 />
+      </DCArtboard>
+      <DCArtboard id="dir05" label="05 · Brutalist — hard grid, swiss, loud" width={1280} height={2400}>
+        <Dir05 />
+      </DCArtboard>
+      <DCArtboard id="dir06" label="06 · Warm & personal — paper, copper, magazine" width={1280} height={2400}>
+        <Dir06 />
+      </DCArtboard>
+    </DCSection>
+  </DesignCanvas>
+);
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
