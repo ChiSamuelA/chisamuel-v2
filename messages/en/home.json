@@ -150,6 +150,30 @@
           ]
         }
       ]
+    },
+    "skills": {
+      "label": "§ 03 — Technical Skills",
+      "categories": [
+        { "label": "LANG", "value": "TypeScript, JavaScript, Python, PHP" },
+        { "label": "FRONT", "value": "Next.js, React, Angular, Tailwind CSS" },
+        { "label": "BACK", "value": "Laravel, FastAPI, Node.js, PostgreSQL, MongoDB" },
+        { "label": "INFRA", "value": "Docker, Kubernetes, Linux, CI/CD, Nginx" }
+      ]
+    },
+    "education": {
+      "label": "§ 04 — Education",
+      "items": [
+        {
+          "degree": "Bachelor's Degree in Computer Science",
+          "org": "University of Yaoundé I · Yaoundé, CM",
+          "date": "2022 — 2023"
+        },
+        {
+          "degree": "Higher National Diploma in Software Engineering",
+          "org": "Siantou University Institute · Yaoundé, CM",
+          "date": "2020 — 2022"
+        }
+      ]
     }
   }
 }

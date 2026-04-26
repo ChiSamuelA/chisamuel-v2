@@ -150,6 +150,30 @@
           ]
         }
       ]
+    },
+    "skills": {
+      "label": "§ 03 — Compétences Techniques",
+      "categories": [
+        { "label": "LANG", "value": "TypeScript, JavaScript, Python, PHP" },
+        { "label": "FRONT", "value": "Next.js, React, Angular, Tailwind CSS" },
+        { "label": "BACK", "value": "Laravel, FastAPI, Node.js, PostgreSQL, MongoDB" },
+        { "label": "INFRA", "value": "Docker, Kubernetes, Linux, CI/CD, Nginx" }
+      ]
+    },
+    "education": {
+      "label": "§ 04 — Éducation",
+      "items": [
+        {
+          "degree": "Licence en Informatique",
+          "org": "Université de Yaoundé I · Yaoundé, CM",
+          "date": "2022 — 2023"
+        },
+        {
+          "degree": "Brevet de Technicien Supérieur en Génie Logiciel",
+          "org": "Institut Universitaire Siantou · Yaoundé, CM",
+          "date": "2020 — 2022"
+        }
+      ]
     }
   }
 }
