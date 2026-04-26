@@ -4,7 +4,7 @@
     "headline": "Engineer of\nthings that\nactually ship.",
     "tagline": "Full-stack engineer. I build production SaaS from Figma to Kubernetes. Based in Yaoundé, shipping globally.",
     "scroll": "↓ Scroll to explore",
-    "projects": "16 projects . 2023—2026"
+    "projects": "12 projects . 2023—2026"
   },
   "about": {
     "label": "ABOUT",
@@ -18,6 +18,80 @@
     "label": "FEATURED WORK",
     "headline": "Selected projects",
     "viewAll": "View all work"
+  },
+  "index": {
+    "title": "The full",
+    "titleItalic": "index",
+    "counter": "12 projects — 2023—2026",
+    "cols": {
+      "number": "#",
+      "project": "Project",
+      "tag": "Category",
+      "role": "Role",
+      "year": "Year"
+    }
+  },
+  "projects": {
+    "01": {
+      "role": "Full-Stack Architect",
+      "tag": "Accessibility · Germany",
+      "desc": "The digital roadmap for accessibility in Germany. Led end-to-end architecture at Nextise GmbH to deliver WCAG-compliant tools and audits. Live at barrierehilfe.de."
+    },
+    "02": {
+      "role": "Performance + SEO",
+      "tag": "EdTech · AI Training",
+      "desc": "Specialized IT & AI training platform. Optimized legacy systems to support hands-on workshops for 3000+ participants and 250+ organizations."
+    },
+    "03": {
+      "role": "Founder engineer",
+      "tag": "Marketplace · Fashion",
+      "desc": "Custom-built thrift & resale marketplace with real-time inventory and Stripe integration. Scalable architecture for high-growth commerce."
+    },
+    "04": {
+      "role": "Lead Architect",
+      "tag": "AI · Automation · DE",
+      "desc": "Strategic partner for AI integration and process automation. Building scalable, GDPR-compliant AI agents and workflows for German enterprises."
+    },
+    "05": {
+      "role": "Infrastructure",
+      "tag": "SaaS · Automation",
+      "desc": "Outreach automation platform — deployed on DO Kubernetes with self-healing DB clusters."
+    },
+    "06": {
+      "role": "Infrastructure",
+      "tag": "SaaS · Automation",
+      "desc": "Sister product to LinkReach. 40% deploy-time reduction via custom GitHub Actions."
+    },
+    "07": {
+      "role": "Full-stack + Infra",
+      "tag": "AI · Automation",
+      "desc": "AI-powered workflow automation in the Nextise ecosystem."
+    },
+    "08": {
+      "role": "Design + Build",
+      "tag": "SaaS · CRM",
+      "desc": "Sales intelligence workspace. Live at targetdesk.fr."
+    },
+    "09": {
+      "role": "Solumentics",
+      "tag": "Enterprise · Telecom",
+      "desc": "Digital solutions via WAP'S CORPORATION (MTN Business Partner)."
+    },
+    "10": {
+      "role": "Solumentics",
+      "tag": "Non-profit",
+      "desc": "Platform for an NGO client under Solumentics."
+    },
+    "11": {
+      "role": "Solumentics",
+      "tag": "Education",
+      "desc": "Education client platform."
+    },
+    "12": {
+      "role": "Founder",
+      "tag": "Agency · Cameroon",
+      "desc": "Partnered w/ MTN Business ecosystem. Digital transformation delivery."
+    }
   },
   "nav": {
     "index": "Index",

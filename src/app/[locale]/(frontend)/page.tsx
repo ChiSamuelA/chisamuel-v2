@@ -2,6 +2,7 @@ import Hero from '@/components/home/Hero'
 import AboutStrip from '@/components/home/AboutStrip'
 import StackStrip from '@/components/home/StackStrip'
 import FeaturedWork from '@/components/home/FeaturedWork'
+import ProjectIndex from '@/components/home/ProjectIndex'
 import { getMessages } from '@/i18n'
 
 export default async function HomePage(props: {
@@ -32,6 +33,12 @@ export default async function HomePage(props: {
       <FeaturedWork 
         locale={locale} 
         messages={messages!.home.featured} 
+        projectMessages={messages!.home.projects}
+      />
+      <ProjectIndex 
+        locale={locale} 
+        messages={messages!.home.index} 
+        projectMessages={messages!.home.projects}
       />
     </>
   )

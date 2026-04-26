@@ -4,7 +4,7 @@
     "headline": "Ingénieur de\nchoses qui\nsortent vraiment.",
     "tagline": "Ingénieur full-stack. Je construis des SaaS de production de Figma à Kubernetes. Basé à Yaoundé, livrant globalement.",
     "scroll": "↓ Faire défiler pour explorer",
-    "projects": "16 projets . 2023—2026"
+    "projects": "12 projets . 2023—2026"
   },
   "about": {
     "label": "À PROPOS",
@@ -18,6 +18,80 @@
     "label": "PROJETS PHARES",
     "headline": "Projets sélectionnés",
     "viewAll": "Tout voir"
+  },
+  "index": {
+    "title": "L'index",
+    "titleItalic": "complet",
+    "counter": "12 projets — 2023—2026",
+    "cols": {
+      "number": "#",
+      "project": "Projet",
+      "tag": "Catégorie",
+      "role": "Rôle",
+      "year": "Année"
+    }
+  },
+  "projects": {
+    "01": {
+      "role": "Architecte Full-Stack",
+      "tag": "Accessibilité · Allemagne",
+      "desc": "La feuille de route numérique pour l'accessibilité en Allemagne. Direction de l'architecture de bout en bout chez Nextise GmbH pour fournir des outils et audits conformes aux normes WCAG. En ligne sur barrierehilfe.de."
+    },
+    "02": {
+      "role": "Performance + SEO",
+      "tag": "EdTech · Formation IA",
+      "desc": "Plateforme de formation spécialisée en IT et IA. Optimisation des systèmes existants pour soutenir des ateliers pratiques pour plus de 3000 participants et 250 organisations."
+    },
+    "03": {
+      "role": "Ingénieur Fondateur",
+      "tag": "Marketplace · Mode",
+      "desc": "Marketplace de seconde main et revente sur mesure avec inventaire en temps réel et intégration Stripe. Architecture évolutive pour un commerce à forte croissance."
+    },
+    "04": {
+      "role": "Architecte Principal",
+      "tag": "IA · Automatisation · DE",
+      "desc": "Partenaire stratégique pour l'intégration de l'IA et l'automatisation des processus. Création d'agents IA et de workflows évolutifs et conformes au RGPD pour les entreprises allemandes."
+    },
+    "05": {
+      "role": "Infrastructure",
+      "tag": "SaaS · Automatisation",
+      "desc": "Plateforme d'automatisation de prospection — déployée sur DO Kubernetes avec des clusters de bases de données auto-cicatrisants."
+    },
+    "06": {
+      "role": "Infrastructure",
+      "tag": "SaaS · Automatisation",
+      "desc": "Produit frère de LinkReach. Réduction de 40% du temps de déploiement via des GitHub Actions personnalisées."
+    },
+    "07": {
+      "role": "Full-stack + Infra",
+      "tag": "IA · Automatisation",
+      "desc": "Automatisation des flux de travail alimentée par l'IA dans l'écosystème Nextise."
+    },
+    "08": {
+      "role": "Design + Build",
+      "tag": "SaaS · CRM",
+      "desc": "Espace de travail d'intelligence commerciale. En ligne sur targetdesk.fr."
+    },
+    "09": {
+      "role": "Solumentics",
+      "tag": "Entreprise · Télécom",
+      "desc": "Solutions numériques via WAP'S CORPORATION (Partenaire MTN Business)."
+    },
+    "10": {
+      "role": "Solumentics",
+      "tag": "Sans but lucratif",
+      "desc": "Plateforme pour un client ONG sous Solumentics."
+    },
+    "11": {
+      "role": "Solumentics",
+      "tag": "Éducation",
+      "desc": "Plateforme client pour l'éducation."
+    },
+    "12": {
+      "role": "Fondateur",
+      "tag": "Agence · Cameroun",
+      "desc": "Partenaire de l'écosystème MTN Business. Livraison de transformation numérique."
+    }
   },
   "nav": {
     "index": "Accueil",

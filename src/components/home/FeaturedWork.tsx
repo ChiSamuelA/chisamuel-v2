@@ -9,9 +9,10 @@ interface FeaturedWorkProps {
     headline: string
     viewAll: string
   }
+  projectMessages: Record<string, { role: string, tag: string, desc: string }>
 }
 
-export default function FeaturedWork({ locale, messages }: FeaturedWorkProps) {
+export default function FeaturedWork({ locale, messages, projectMessages }: FeaturedWorkProps) {
   const featured = PROJECTS.slice(0, 4)
   const mainProject = featured[0]
   const secondaryProjects = featured.slice(1)
@@ -47,7 +48,7 @@ export default function FeaturedWork({ locale, messages }: FeaturedWorkProps) {
         
         {/* Large Featured Card */}
         <Link
-          href={getHref(`/work/${mainProject.name.toLowerCase().replace(/\s+/g, '-')}`)}
+          href={getHref(`/work/${mainProject.slug}`)}
           className="group relative lg:row-span-2 rounded-md overflow-hidden border border-[oklch(0.28_0.02_40)] p-8 lg:p-11 flex flex-col justify-between"
           style={{ background: 'linear-gradient(135deg, oklch(0.22 0.03 40), oklch(0.16 0.02 30))' }}
         >
@@ -59,18 +60,18 @@ export default function FeaturedWork({ locale, messages }: FeaturedWorkProps) {
 
           <div className="relative z-10">
             <p className="font-mono text-[11px] text-copper uppercase tracking-[1px] mb-6">
-              {mainProject.n} · FEATURED · {mainProject.tag}
+              {mainProject.n} · FEATURED · {projectMessages[mainProject.n]?.tag}
             </p>
             <h3 className="font-serif text-[48px] sm:text-[64px] lg:text-[96px] text-paper leading-[0.98] tracking-[-0.025em] mb-6">
               {mainProject.name}
             </h3>
             <p className="text-paper-dim text-[15px] leading-[1.55] max-w-[520px]">
-              {mainProject.desc}
+              {projectMessages[mainProject.n]?.desc}
             </p>
           </div>
 
           <div className="relative z-10 flex justify-between items-end font-mono text-[11px] text-muted uppercase">
-            <span>{mainProject.role} · {mainProject.year}</span>
+            <span>{projectMessages[mainProject.n]?.role} · {mainProject.year}</span>
             <span className="text-copper group-hover:translate-x-1 transition-transform duration-200">CASE STUDY →</span>
           </div>
         </Link>
@@ -79,7 +80,7 @@ export default function FeaturedWork({ locale, messages }: FeaturedWorkProps) {
         {secondaryProjects.map((project) => (
           <Link
             key={project.n}
-            href={getHref(`/work/${project.name.toLowerCase().replace(/\s+/g, '-')}`)}
+            href={getHref(`/work/${project.slug}`)}
             className="group relative rounded-md border border-[oklch(0.28_0.005_80)] bg-[oklch(0.22_0.005_80)] p-7 flex flex-col justify-between hover:border-copper/30 transition-all duration-300"
           >
             <div>
@@ -90,7 +91,7 @@ export default function FeaturedWork({ locale, messages }: FeaturedWorkProps) {
                 {project.name}
               </h3>
               <p className="text-paper-dim text-[13px] leading-[1.5] line-clamp-2 lg:line-clamp-none">
-                {project.desc}
+                {projectMessages[project.n]?.desc}
               </p>
             </div>
 
