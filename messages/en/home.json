@@ -106,6 +106,13 @@
       "founder": "Founder, Solumentics",
       "location": "Yaoundé, CM",
       "download": "↓ Download PDF"
+    },
+    "summary": {
+      "label": "§ 01 — Summary",
+      "text": "Full-stack engineer with hands-on experience across the complete development lifecycle. Proficient in building {production} web applications, designing {scalable} backend systems, and managing the {cloud} they run on. Focused on delivering reliable, maintainable software that solves real problems for real businesses.",
+      "production": "production-grade",
+      "scalable": "scalable",
+      "cloud": "cloud infrastructure"
     }
   }
 }
