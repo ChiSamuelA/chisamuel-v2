@@ -98,5 +98,14 @@
     "work": "Études de cas",
     "cv": "CV",
     "contact": "Contact"
+  },
+  "cv": {
+    "hero": {
+      "label": "— Curriculum Vitae . MMXXVI —",
+      "role": "Ingénieur Full-Stack",
+      "founder": "Fondateur, Solumentics",
+      "location": "Yaoundé, CM",
+      "download": "↓ Télécharger le PDF"
+    }
   }
 }
