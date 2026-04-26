@@ -113,6 +113,43 @@
       "production": "qualité production",
       "scalable": "évolutifs",
       "cloud": "infrastructure cloud"
+    },
+    "experience": {
+      "label": "§ 02 — Expérience",
+      "items": [
+        {
+          "title": "Ingénieur Logiciel",
+          "date": "Jan 2025 — Présent",
+          "org": "Nextise GmbH · Stuttgart, DE (Remote)",
+          "bullets": [
+            "Direction du développement full-stack de BarriereHilfe, une plateforme d'accessibilité à 3 niveaux pour le marché allemand, garantissant la conformité WCAG 2.2.",
+            "Orchestration du déploiement de plusieurs produits SaaS sur DigitalOcean Kubernetes avec des clusters auto-cicatrisants et une mise à l'échelle automatisée.",
+            "Réduction du temps de déploiement de 40 % via des pipelines CI/CD GitHub Actions personnalisés et l'infrastructure-as-code.",
+            "Modernisation des systèmes existants avec Next.js SSR et le caching en bordure de réseau, améliorant significativement les Web Vitals et le SEO."
+          ]
+        },
+        {
+          "title": "Fondateur & Développeur Principal",
+          "date": "2024 — Présent",
+          "org": "Solumentics · Yaoundé, CM",
+          "bullets": [
+            "Architecture et déploiement de plateformes haute performance, notamment nadscam.org, csb-amasia.com et ramanasa.com via des partenariats avec MTN Business et Canal+.",
+            "Conception et lancement de thrift-plug.com, une boutique e-commerce complète avec Next.js et PayloadCMS, incluant une IA pour l'optimisation des descriptions produits.",
+            "Configuration et gestion d'environnements VPS Hostinger avec Nginx et pipelines CI/CD GitHub personnalisés pour des déploiements automatisés.",
+            "Direction de la croissance numérique des clients, incluant la configuration et la gestion des profils Google My Business pour booster la visibilité locale."
+          ]
+        },
+        {
+          "title": "Développeur Full-Stack",
+          "date": "Déc 2023 — Sep 2024",
+          "org": "Adipster Tech Limited",
+          "bullets": [
+            "Développement de services API à haut débit utilisant Golang pour un système CRM à grande échelle, optimisant les vitesses de récupération des données.",
+            "Intégration d'outils d'analyse LLM basés sur Python dans des tableaux de bord web pour fournir des informations exploitables sur le marché immobilier.",
+            "Collaboration sur des simulations interactives 2D optimisées utilisant Unity à des fins éducatives et de formation."
+          ]
+        }
+      ]
     }
   }
 }

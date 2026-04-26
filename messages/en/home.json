@@ -113,6 +113,43 @@
       "production": "production-grade",
       "scalable": "scalable",
       "cloud": "cloud infrastructure"
+    },
+    "experience": {
+      "label": "§ 02 — Experience",
+      "items": [
+        {
+          "title": "Software Engineer",
+          "date": "Jan 2025 — Present",
+          "org": "Nextise GmbH · Stuttgart, DE (Remote)",
+          "bullets": [
+            "Leading full-stack development of BarriereHilfe, a 3-tier accessibility platform for the German market, ensuring WCAG 2.2 compliance.",
+            "Orchestrating deployment of multiple SaaS products on DigitalOcean Kubernetes with self-healing clusters and automated scaling.",
+            "Reduced deployment time by 40% through custom GitHub Actions CI/CD pipelines and infrastructure-as-code.",
+            "Modernizing legacy systems with Next.js SSR and edge caching, significantly improving core web vitals and SEO performance."
+          ]
+        },
+        {
+          "title": "Founder & Lead Developer",
+          "date": "2024 — Present",
+          "org": "Solumentics · Yaoundé, CM",
+          "bullets": [
+            "Architected and deployed high-performance platforms including nadscam.org, csb-amasia.com, and ramanasa.com through strategic partnerships with MTN Business and Canal+ distributors.",
+            "Designed and launched thrift-plug.com, a full-scale e-commerce store built with Next.js and PayloadCMS, featuring custom AI integration for automated and accurate product descriptions.",
+            "Configured and managed Hostinger VPS environments with optimized Nginx configurations and custom GitHub CI/CD pipelines for automated deployments.",
+            "Led digital growth for client brands, including full setup and active management of Google My Business profiles to drive local engagement and visibility."
+          ]
+        },
+        {
+          "title": "Full-Stack Developer",
+          "date": "Dec 2023 — Sep 2024",
+          "org": "Adipster Tech Limited",
+          "bullets": [
+            "Developed high-throughput API services using Golang for a large-scale CRM system, optimizing data retrieval speeds.",
+            "Integrated Python-based LLM analysis tools into web dashboards to provide actionable real estate market insights.",
+            "Collaborated on optimized 2D interactive simulations using Unity for educational and training purposes."
+          ]
+        }
+      ]
     }
   }
 }
