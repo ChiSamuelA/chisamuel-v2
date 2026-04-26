@@ -18,15 +18,15 @@ export default function Hero({ label, headline, tagline, scroll, projects }: Her
   const lines = headline.split('\n')
 
   return (
-    <section className="relative h-[100svh] min-h-[800px] overflow-hidden bg-ink-deep">
+    <section className="relative h-[100svh] min-h-[700px] lg:min-h-[900px] overflow-hidden bg-ink-deep">
 
-      {/* Sphere — mobile/tablet pulled up closer to text, desktop unchanged */}
+      {/* Sphere — reduced size on desktop to see full ball */}
       <div
         className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none
           top-[62%]  w-[260px]  h-[260px]
           sm:top-[65%] sm:w-[380px] sm:h-[380px]
           md:top-[72%] md:w-[540px] md:h-[540px]
-          lg:top-[68%] lg:w-[820px] lg:h-[820px]"
+          lg:top-[65%] lg:w-[620px] lg:h-[620px]"
         style={{ background: SPHERE_BG, boxShadow: SPHERE_SHADOW }}
         aria-hidden="true"
       />
@@ -37,7 +37,7 @@ export default function Hero({ label, headline, tagline, scroll, projects }: Her
           top-[62%]  w-[390px]   h-[390px]
           sm:top-[65%] sm:w-[560px]  sm:h-[560px]
           md:top-[72%] md:w-[800px]  md:h-[800px]
-          lg:top-[68%] lg:w-[1200px] lg:h-[1200px]"
+          lg:top-[65%] lg:w-[900px]  lg:h-[900px]"
         style={{ background: 'radial-gradient(circle, oklch(0.6 0.2 55 / 0.12) 0%, transparent 60%)' }}
         aria-hidden="true"
       />

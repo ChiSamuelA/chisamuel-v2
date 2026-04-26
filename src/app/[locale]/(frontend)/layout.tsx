@@ -1,8 +1,9 @@
 import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google'
 import React from 'react'
 import './styles.css'
-import { locales, type Locale } from '@/i18n'
+import { locales, type Locale, getMessages } from '@/i18n'
 import { notFound } from 'next/navigation'
+import Nav from '@/components/Nav'
 
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
@@ -47,6 +48,8 @@ export default async function RootLayout(props: {
     notFound()
   }
 
+  const messages = await getMessages(locale)
+
   return (
     <html
       lang={locale}
@@ -54,6 +57,7 @@ export default async function RootLayout(props: {
       style={{ background: 'oklch(0.12 0.005 80)' }}
     >
       <body>
+        <Nav locale={locale} messages={messages!.home.nav} />
         <main>{children}</main>
       </body>
     </html>

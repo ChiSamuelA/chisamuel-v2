@@ -62,8 +62,8 @@ export default function Nav({ locale, messages }: NavProps) {
           style={{ boxShadow: '0 0 12px oklch(0.72 0.16 55)' }}
           aria-hidden="true"
         />
-        <span className="hidden xs:inline">CHI_SAMUEL</span>
-        <span className="xs:hidden">CHI</span>
+        <span className="hidden xs:inline text-copper font-bold">CHI SAMUEL</span>
+        <span className="xs:hidden text-copper font-bold">CHI</span>
       </div>
 
       {/* Links & Switcher */}
@@ -82,7 +82,7 @@ export default function Nav({ locale, messages }: NavProps) {
                   mobileHide ? 'hidden md:block' : '',
                   isActive
                     ? 'text-paper'
-                    : 'text-paper-dim hover:text-paper',
+                    : 'text-paper-dim hover:text-paper transition-colors duration-200',
                 ]
                   .filter(Boolean)
                   .join(' ')}
@@ -99,7 +99,9 @@ export default function Nav({ locale, messages }: NavProps) {
         {/* Language Switcher Button */}
         <Link
           href={getSwitchHref()}
-          className="font-mono text-[11px] px-2.5 py-1 rounded border border-copper/30 text-copper"
+          scroll={false}
+          className="font-mono text-[11px] px-2.5 py-1 rounded border border-copper/30 
+            text-copper hover:bg-copper hover:text-ink transition-all duration-300"
           style={{ letterSpacing: '1px' }}
         >
           {switchLabel}

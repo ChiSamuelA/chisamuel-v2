@@ -1,10 +1,18 @@
 {
   "hero": {
-    "label": "— Chi Samuel A. — MMXXVI —",
+    "label": "Chi Samuel A. . MMXXVI",
     "headline": "Engineer of\nthings that\nactually ship.",
     "tagline": "Full-stack engineer. I build production SaaS from Figma to Kubernetes. Based in Yaoundé, shipping globally.",
     "scroll": "↓ Scroll to explore",
-    "projects": "16 projects · 2023—2026"
+    "projects": "16 projects . 2023—2026"
+  },
+  "about": {
+    "label": "ABOUT",
+    "headline": "Building products that ship end-to-end.",
+    "p1": "Full-stack engineer with a {holistic view} of the lifecycle : from {pixel-perfect UI} in Figma to {production APIs}, from {shipping features} to managing the {infrastructure} they run on.",
+    "p2": "I work across the {full stack} without switching context. Design decisions inform {backend architecture}. DevOps constraints shape {frontend choices}. {Everything is connected}.",
+    "p3": "{Founder} of {Solumentics}, partnered with {international SMEs} and institutions across Europe and Africa to build {software that actually matters}.",
+    "quote": "I don't just write code. I own the outcome."
   },
   "nav": {
     "index": "Index",

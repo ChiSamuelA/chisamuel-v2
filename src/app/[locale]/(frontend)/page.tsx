@@ -1,5 +1,5 @@
-import Hero from '@/components/Hero'
-import Nav from '@/components/Nav'
+import Hero from '@/components/home/Hero'
+import AboutStrip from '@/components/home/AboutStrip'
 import { getMessages } from '@/i18n'
 
 export default async function HomePage(props: {
@@ -11,13 +11,20 @@ export default async function HomePage(props: {
 
   return (
     <>
-      <Nav locale={locale} messages={messages!.home.nav} />
       <Hero 
         label={messages!.home.hero.label}
         headline={messages!.home.hero.headline}
         tagline={messages!.home.hero.tagline}
         scroll={messages!.home.hero.scroll}
         projects={messages!.home.hero.projects}
+      />
+      <AboutStrip
+        label={messages!.home.about.label}
+        headline={messages!.home.about.headline}
+        p1={messages!.home.about.p1}
+        p2={messages!.home.about.p2}
+        p3={messages!.home.about.p3}
+        quote={messages!.home.about.quote}
       />
     </>
   )
