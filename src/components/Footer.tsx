@@ -24,7 +24,7 @@ const Footer = () => {
         <div className="flex flex-row gap-5 items-center flex-wrap">
           <div className="flex items-center gap-4">
             <a 
-              href="https://wa.me/237695013325" 
+              href="https://wa.me/237659224784" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted hover:text-paper transition-colors"

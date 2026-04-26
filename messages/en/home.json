@@ -175,5 +175,21 @@
         }
       ]
     }
+  },
+  "contact": {
+    "hero": {
+      "label": "— CONTACT —",
+      "headlineLine1": "Let's",
+      "headlineLine2": "talk.",
+      "body": "Open to freelance projects, collaborations, and interesting problems. Pick a channel and reach out.",
+      "cta": "me@chisamuel.com"
+    },
+    "reachMe": {
+      "label": "— REACH ME —",
+      "email": "EMAIL",
+      "phone": "PHONE",
+      "linkedin": "LINKEDIN",
+      "github": "GITHUB"
+    }
   }
 }
