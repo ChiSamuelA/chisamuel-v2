@@ -4,6 +4,7 @@ import './styles.css'
 import { locales, type Locale, getMessages } from '@/i18n'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
@@ -59,6 +60,7 @@ export default async function RootLayout(props: {
       <body>
         <Nav locale={locale} messages={messages!.home.nav} />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
