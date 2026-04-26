@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink-deep:  oklch(0.12 0.005 80);
+  --ink:       oklch(0.18 0.005 80);
+  --paper:     oklch(0.96 0.005 80);
+  --paper-dim: oklch(0.88 0.005 80);
+  --muted:     oklch(0.60 0.005 80);
+  --copper:    oklch(0.72 0.16 55);
+}
+
+body {
+  background: var(--ink-deep);
+  color: var(--paper);
+  font-family: var(--font-sans), "Inter", system-ui, sans-serif;
+  text-wrap: pretty;
+}
+
+.font-display {
+  font-family: var(--font-serif), "Instrument Serif", serif;
+  letter-spacing: -0.04em;
+}
+
+.font-meta {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 11px;
+}

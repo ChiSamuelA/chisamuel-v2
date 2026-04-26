@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "label": "— Chi Samuel A. — MMXXVI —",
+    "headline": "Engineer of\nthings that\nactually ship.",
+    "tagline": "Full-stack engineer. I build production SaaS from Figma to Kubernetes. Based in Yaoundé, shipping globally.",
+    "scroll": "↓ Scroll to explore",
+    "projects": "16 projects · 2023—2026"
+  },
+  "nav": {
+    "index": "Index",
+    "work": "Case studies",
+    "cv": "CV",
+    "contact": "Contact"
+  }
+}

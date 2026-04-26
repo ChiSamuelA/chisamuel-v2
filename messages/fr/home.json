@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "label": "— Chi Samuel A. — MMXXVI —",
+    "headline": "Ingénieur de\nchoses qui\nsortent vraiment.",
+    "tagline": "Ingénieur full-stack. Je construis des SaaS de production de Figma à Kubernetes. Basé à Yaoundé, livrant globalement.",
+    "scroll": "↓ Faire défiler pour explorer",
+    "projects": "16 projets · 2023—2026"
+  },
+  "nav": {
+    "index": "Accueil",
+    "work": "Études de cas",
+    "cv": "CV",
+    "contact": "Contact"
+  }
+}
