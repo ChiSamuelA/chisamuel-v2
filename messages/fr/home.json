@@ -14,6 +14,11 @@
     "p3": "{Fondateur} de {Solumentics}, partenaire de {PME} et d'institutions internationales à travers l'Europe et l'Afrique pour construire des {logiciels qui comptent vraiment}.",
     "quote": "Je ne me contente pas d'écrire du code. Je suis responsable du résultat."
   },
+  "featured": {
+    "label": "PROJETS PHARES",
+    "headline": "Projets sélectionnés",
+    "viewAll": "Tout voir"
+  },
   "nav": {
     "index": "Accueil",
     "work": "Études de cas",

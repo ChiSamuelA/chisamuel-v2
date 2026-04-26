@@ -14,6 +14,11 @@
     "p3": "{Founder} of {Solumentics}, partnered with {international SMEs} and institutions across Europe and Africa to build {software that actually matters}.",
     "quote": "I don't just write code. I own the outcome."
   },
+  "featured": {
+    "label": "FEATURED WORK",
+    "headline": "Selected projects",
+    "viewAll": "View all work"
+  },
   "nav": {
     "index": "Index",
     "work": "Case studies",

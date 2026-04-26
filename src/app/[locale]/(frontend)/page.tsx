@@ -1,5 +1,7 @@
 import Hero from '@/components/home/Hero'
 import AboutStrip from '@/components/home/AboutStrip'
+import StackStrip from '@/components/home/StackStrip'
+import FeaturedWork from '@/components/home/FeaturedWork'
 import { getMessages } from '@/i18n'
 
 export default async function HomePage(props: {
@@ -25,6 +27,11 @@ export default async function HomePage(props: {
         p2={messages!.home.about.p2}
         p3={messages!.home.about.p3}
         quote={messages!.home.about.quote}
+      />
+      <StackStrip />
+      <FeaturedWork 
+        locale={locale} 
+        messages={messages!.home.featured} 
       />
     </>
   )
