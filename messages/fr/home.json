@@ -190,6 +190,27 @@
       "phone": "TÉLÉPHONE",
       "linkedin": "LINKEDIN",
       "github": "GITHUB"
+    },
+    "messageForm": {
+      "label": "— OU ENVOYEZ UNE NOTE —",
+      "name": "VOTRE NOM",
+      "namePlaceholder": "Jean Dupont",
+      "email": "VOTRE E-MAIL",
+      "emailPlaceholder": "jean@startup.io",
+      "project": "PARLEZ-MOI DE VOTRE PROJET",
+      "projectPlaceholder": "Une ligne ou deux sur le projet, le calendrier ou le rôle...",
+      "deliveryInfo": "→ Livré directement à {email}",
+      "submit": "Envoyer le message →"
+    },
+    "availability": {
+      "label": "— DISPONIBILITÉ —",
+      "statusLabel": "STATUT",
+      "statusValue": "Ouvert à de nouveaux projets",
+      "timezoneLabel": "FUSEAU HORAIRE",
+      "timezoneValue": "WAT — UTC+1",
+      "timezoneSubValue": "Yaoundé, Cameroun",
+      "workLabel": "TRAVAIL PRÉFÉRÉ",
+      "workValue": "À distance, contrat ou freelance"
     }
   }
 }

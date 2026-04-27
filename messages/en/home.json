@@ -190,6 +190,27 @@
       "phone": "PHONE",
       "linkedin": "LINKEDIN",
       "github": "GITHUB"
+    },
+    "messageForm": {
+      "label": "— OR SEND A NOTE —",
+      "name": "YOUR NAME",
+      "namePlaceholder": "Jane Founder",
+      "email": "YOUR EMAIL",
+      "emailPlaceholder": "jane@startup.io",
+      "project": "TELL ME ABOUT YOUR PROJECT",
+      "projectPlaceholder": "A line or two about the project, timeline, or role...",
+      "deliveryInfo": "→ Delivered directly to {email}",
+      "submit": "Send message →"
+    },
+    "availability": {
+      "label": "— AVAILABILITY —",
+      "statusLabel": "STATUS",
+      "statusValue": "Open to new projects",
+      "timezoneLabel": "TIMEZONE",
+      "timezoneValue": "WAT — UTC+1",
+      "timezoneSubValue": "Yaoundé, Cameroon",
+      "workLabel": "PREFERRED WORK",
+      "workValue": "Remote, contract or freelance"
     }
   }
 }
