@@ -1,21 +1,23 @@
 import React from 'react'
 import Link from 'next/link'
-import { PROJECTS } from '@/content/projects'
+import type { Project } from '@/payload-types'
 
 interface FeaturedWorkProps {
+  projects: Project[]
   locale: string
   messages: {
     label: string
     headline: string
     viewAll: string
   }
-  projectMessages: Record<string, { role: string, tag: string, desc: string }>
 }
 
-export default function FeaturedWork({ locale, messages, projectMessages }: FeaturedWorkProps) {
-  const featured = PROJECTS.slice(0, 4)
+export default function FeaturedWork({ projects, locale, messages }: FeaturedWorkProps) {
+  const featured = projects.slice(0, 4)
   const mainProject = featured[0]
   const secondaryProjects = featured.slice(1)
+
+  if (!mainProject) return null
 
   // Helper to build local links
   const getHref = (path: string) => {
@@ -60,18 +62,18 @@ export default function FeaturedWork({ locale, messages, projectMessages }: Feat
 
           <div className="relative z-10">
             <p className="font-mono text-[11px] text-copper uppercase tracking-[1px] mb-6">
-              {mainProject.n} · FEATURED · {projectMessages[mainProject.n]?.tag}
+              {mainProject.n} · FEATURED · {mainProject.tag}
             </p>
             <h3 className="font-serif text-[48px] sm:text-[64px] lg:text-[96px] text-paper leading-[0.98] tracking-[-0.025em] mb-6">
               {mainProject.name}
             </h3>
             <p className="text-paper-dim text-[15px] leading-[1.55] max-w-[520px]">
-              {projectMessages[mainProject.n]?.desc}
+              {mainProject.tagline || mainProject.overview?.substring(0, 160)}
             </p>
           </div>
 
           <div className="relative z-10 flex justify-between items-end font-mono text-[11px] text-muted uppercase">
-            <span>{projectMessages[mainProject.n]?.role} · {mainProject.year}</span>
+            <span>{mainProject.role} · {mainProject.year}</span>
             <span className="text-copper group-hover:translate-x-1 transition-transform duration-200">CASE STUDY →</span>
           </div>
         </Link>
@@ -79,7 +81,7 @@ export default function FeaturedWork({ locale, messages, projectMessages }: Feat
         {/* Small Secondary Cards */}
         {secondaryProjects.map((project) => (
           <Link
-            key={project.n}
+            key={project.id}
             href={getHref(`/work/${project.slug}`)}
             className="group relative rounded-md border border-[oklch(0.28_0.005_80)] bg-[oklch(0.22_0.005_80)] p-7 flex flex-col justify-between hover:border-copper/30 transition-all duration-300"
           >
@@ -91,7 +93,7 @@ export default function FeaturedWork({ locale, messages, projectMessages }: Feat
                 {project.name}
               </h3>
               <p className="text-paper-dim text-[13px] leading-[1.5] line-clamp-2 lg:line-clamp-none">
-                {projectMessages[project.n]?.desc}
+                {project.tagline || project.overview?.substring(0, 100)}
               </p>
             </div>
 
@@ -106,3 +108,4 @@ export default function FeaturedWork({ locale, messages, projectMessages }: Feat
     </section>
   )
 }
+

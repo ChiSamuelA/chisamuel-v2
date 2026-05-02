@@ -4,6 +4,8 @@ import StackStrip from '@/components/home/StackStrip'
 import FeaturedWork from '@/components/home/FeaturedWork'
 import ProjectIndex from '@/components/home/ProjectIndex'
 import { getMessages } from '@/i18n'
+import { getPayload } from 'payload'
+import configPromise from '@/payload.config'
 
 export default async function HomePage(props: {
   params: Promise<{ locale: string }>
@@ -11,6 +13,27 @@ export default async function HomePage(props: {
   const params = await props.params
   const { locale } = params
   const messages = await getMessages(locale)
+
+  const payload = await getPayload({ config: configPromise })
+  
+  // Fetch featured projects
+  const featuredResult = await payload.find({
+    collection: 'projects',
+    where: {
+      featured: { equals: true },
+    },
+    locale: locale as 'en' | 'fr',
+    sort: 'order',
+    limit: 4,
+  })
+
+  // Fetch all projects for the index
+  const allProjectsResult = await payload.find({
+    collection: 'projects',
+    locale: locale as 'en' | 'fr',
+    sort: 'order',
+    limit: 100,
+  })
 
   return (
     <>
@@ -31,15 +54,16 @@ export default async function HomePage(props: {
       />
       <StackStrip />
       <FeaturedWork 
+        projects={featuredResult.docs}
         locale={locale} 
         messages={messages!.home.featured} 
-        projectMessages={messages!.home.projects}
       />
       <ProjectIndex 
+        projects={allProjectsResult.docs}
         locale={locale} 
         messages={messages!.home.index} 
-        projectMessages={messages!.home.projects}
       />
     </>
   )
 }
+
