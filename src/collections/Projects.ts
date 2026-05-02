@@ -18,6 +18,12 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: 'heroImage',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+    },
+    {
       name: 'n',
       type: 'text',
       required: true,

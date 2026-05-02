@@ -170,6 +170,7 @@ export interface Media {
 export interface Project {
   id: string;
   slug: string;
+  heroImage?: (string | null) | Media;
   n: string;
   year: string;
   tag: string;
@@ -333,6 +334,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface ProjectsSelect<T extends boolean = true> {
   slug?: T;
+  heroImage?: T;
   n?: T;
   year?: T;
   tag?: T;

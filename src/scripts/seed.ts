@@ -57,6 +57,7 @@ async function seed() {
           stack: project.stack,
           href: project.href,
           featured: project.featured || false,
+          order: count + 1,
           name: project.name,
           tagline: '',
           overview: '',
