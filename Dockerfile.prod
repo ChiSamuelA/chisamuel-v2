@@ -1,0 +1,63 @@
+# Stage 1: Dependencies
+FROM node:20-alpine AS deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# Copy lockfile and package.json
+COPY package.json pnpm-lock.yaml* ./
+
+# Install dependencies
+RUN pnpm i --frozen-lockfile
+
+# Stage 2: Builder
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+# Enable pnpm for the build stage
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# Set environment variables for build time
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Build the application
+RUN pnpm run build
+
+# Stage 3: Production Runner
+FROM node:20-alpine AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+# Create a non-root user
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+# Copy necessary files from builder
+# Next.js standalone output includes everything needed to run the server
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+# Ensure the app can write to the uploads directory if it's local
+# Note: In production, it's better to use a volume for /app/public/media
+RUN mkdir -p public/media && chown -R nextjs:nodejs public/media
+
+USER nextjs
+
+EXPOSE 3000
+
+# Healthcheck to ensure the container is responsive
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000/api/globals/settings', (res) => { if (res.statusCode === 200) process.exit(0); else process.exit(1); })" || exit 1
+
+# Start the application using the standalone server
+CMD ["node", "server.js"]
