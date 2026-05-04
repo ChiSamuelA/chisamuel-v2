@@ -5,6 +5,10 @@ services:
     image: ${GHCR_IMAGE:-chi-portfolio:latest}
     container_name: chi-portfolio
     restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 768M
     ports:
       - '3000:3000'
     environment:
