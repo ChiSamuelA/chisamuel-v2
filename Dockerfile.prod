@@ -1,34 +1,51 @@
-# Stage 1: Dependencies
+# ==========================================
+# STAGE 1: Dependencies Installer
+# ==========================================
 FROM node:20-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# Enable pnpm via Corepack
+RUN corepack enable && corepack prepare pnpm@10.2.0 --activate
 
-# Copy lockfile and package.json
-COPY package.json pnpm-lock.yaml* ./
+# Copy only dependency definitions
+COPY package.json pnpm-lock.yaml ./
 
-# Install dependencies
-RUN pnpm i --frozen-lockfile
+# Install dependencies using pnpm cache mounts to speed up consecutive builds
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm install --frozen-lockfile
 
-# Stage 2: Builder
+# ==========================================
+# STAGE 2: Application Builder
+# ==========================================
 FROM node:20-alpine AS builder
 WORKDIR /app
+
+# Enable pnpm via Corepack
+RUN corepack enable && corepack prepare pnpm@10.2.0 --activate
+
+# Copy dependencies and source code
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Enable pnpm for the build stage
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# Set Build-Time Arguments (Passed during GitHub Actions build)
+ARG DATABASE_URL="mongodb://127.0.0.1:27017/build-db"
+ARG PAYLOAD_SECRET="temporary-build-secret-value-never-use-in-production"
+ARG NEXT_PUBLIC_SERVER_URL
 
-# Set environment variables for build time
+# Expose arguments as Environment Variables for 'next build'
+ENV DATABASE_URL=$DATABASE_URL
+ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
+ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Build the application
+# Perform Next.js build (generates standalone server under .next/standalone)
 RUN pnpm run build
 
-# Stage 3: Production Runner
+# ==========================================
+# STAGE 3: Production Runner
+# ==========================================
 FROM node:20-alpine AS runner
 WORKDIR /app
 
@@ -37,27 +54,25 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# Create a non-root user
+# Set up secure, non-root user execution
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copy necessary files from builder
-# Next.js standalone output includes everything needed to run the server
+# Copy static assets and standalone build output from Stage 2
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Ensure the app can write to the uploads directory if it's local
-# Note: In production, it's better to use a volume for /app/public/media
+# Setup persistent directory for local media uploads (Payload CMS defaults)
 RUN mkdir -p public/media && chown -R nextjs:nodejs public/media
 
 USER nextjs
 
 EXPOSE 3000
 
-# Healthcheck to ensure the container is responsive
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+# Container Healthcheck
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
   CMD node -e "require('http').get('http://localhost:3000/api/globals/settings', (res) => { if (res.statusCode === 200) process.exit(0); else process.exit(1); })" || exit 1
 
-# Start the application using the standalone server
+# Start the standalone Next.js server
 CMD ["node", "server.js"]
