@@ -1,0 +1,17 @@
+# Ignore git directory
+.git
+
+# Ignore local dependency folders
+node_modules
+
+# Ignore Next.js build cache to keep build context lightweight
+.next/cache
+
+# Ignore test results and reports
+test-results
+playwright-report
+playwright/.cache
+
+# Ignore dev design folder and staging artifacts
+claude-design
+build-art
