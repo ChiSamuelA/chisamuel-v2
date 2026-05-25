@@ -156,11 +156,19 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
         run: pnpm run build
 
+      - name: Verify Build Output
+        run: |
+          echo "=== .next root ===" && ls -la .next/
+          echo "=== standalone ===" && ls -la .next/standalone/ || echo "STANDALONE NOT FOUND"
+          echo "=== server ===" && ls -la .next/server/ || echo "SERVER NOT FOUND"
+          echo "=== JSON files ===" && ls .next/*.json || echo "NO JSON FILES"
+
       - name: Upload Standalone Build Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: standalone-build
           retention-days: 1
+          if-no-files-found: error
           path: |
             .next/standalone
             .next/static
