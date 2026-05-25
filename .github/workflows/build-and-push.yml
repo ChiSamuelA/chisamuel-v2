@@ -35,7 +35,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
   # ==========================================
-  # JOB 2: Code Quality & Type Checks
+  # JOB 2: Code Quality & Type Checks (Sequential: Runs AFTER Setup is complete)
   # ==========================================
   check:
     runs-on: ubuntu-latest
@@ -65,11 +65,23 @@ jobs:
         run: pnpm exec tsc --noEmit
 
   # ==========================================
-  # JOB 3: Integration & Unit Tests
+  # JOB 3: Integration & Unit Tests (Sequential: Runs AFTER check is 100% complete)
   # ==========================================
   test:
     runs-on: ubuntu-latest
-    needs: setup
+    needs: check
+    # Spin up MongoDB service to handle test-time database queries
+    services:
+      mongodb:
+        image: mongo:6.0
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --eval 'db.adminCommand(\"ping\")'"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -89,14 +101,20 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run Tests
+        env:
+          # Use local MongoDB service container on port 27017 for integration tests
+          DATABASE_URL: mongodb://localhost:27017/test-db
+          # Use a self-contained placeholder secret for the test run
+          PAYLOAD_SECRET: a_temporary_test_secret_key_to_pass_validation_12345
+          NODE_ENV: test
         run: pnpm run test:int
 
   # ==========================================
-  # JOB 4: Compile Production Build
+  # JOB 4: Compile Production Build (Sequential: Runs AFTER test is 100% complete)
   # ==========================================
   compile:
     runs-on: ubuntu-latest
-    needs: [check, test]
+    needs: test
     # Spin up MongoDB service to handle build-time static page queries
     services:
       mongodb:
@@ -131,7 +149,7 @@ jobs:
         env:
           # Use local MongoDB service container on port 27017
           DATABASE_URL: mongodb://localhost:27017/build-db
-          # Use a self-contained placeholder secret (no Github secrets needed!)
+          # Use a self-contained placeholder secret
           PAYLOAD_SECRET: a_temporary_build_secret_to_pass_compilation_12345
           NEXT_PUBLIC_SERVER_URL: ${{ env.NEXT_PUBLIC_SERVER_URL }}
           NODE_ENV: production
@@ -149,7 +167,7 @@ jobs:
             public
 
   # ==========================================
-  # JOB 5: Package & Push Docker Image
+  # JOB 5: Package & Push Docker Image (Sequential: Runs AFTER compile is 100% complete)
   # ==========================================
   publish:
     runs-on: ubuntu-latest
