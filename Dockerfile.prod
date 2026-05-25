@@ -21,6 +21,8 @@ COPY .next/static ./.next/static
 COPY .next/server ./.next/server
 COPY .next/BUILD_ID ./.next/BUILD_ID
 
+RUN npm install --no-audit --no-fund @swc/helpers
+
 # Setup persistent directory for local media uploads (Payload CMS defaults)
 RUN mkdir -p public/media && chown -R nextjs:nodejs public/media
 
