@@ -1,39 +1,36 @@
-# ==========================================
-# Production Runner Stage
-# ==========================================
-FROM node:20-alpine AS runner
-WORKDIR /app
+FROM node:20-alpine AS base
 
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+RUN corepack enable pnpm
+COPY package.json pnpm-lock.yaml* ./
+RUN pnpm i --frozen-lockfile
+
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+ARG PAYLOAD_SECRET
+ARG NEXT_PUBLIC_SERVER_URL
+ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
+ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL
+ENV PAYLOAD_IGNORE_DATABASE=true
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
+RUN corepack enable pnpm
+RUN pnpm run build
+
+FROM base AS runner
+WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
-
-# Set up secure, non-root user execution
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
-
-# Copy pre-compiled standalone output and assets
-# Note: Since compilation was done on the GitHub Actions runner,
-# we only need to copy the final build outputs into the container.
-COPY public ./public
-COPY .next/standalone ./
-COPY .next/static ./.next/static
-COPY .next/server ./.next/server
-COPY .next/BUILD_ID ./.next/BUILD_ID
-COPY .next/*.json ./.next/
-
-RUN npm install --no-audit --no-fund @swc/helpers
-
-# Setup persistent directory for local media uploads (Payload CMS defaults)
-RUN mkdir -p public/media && chown -R nextjs:nodejs public/media
-
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 USER nextjs
-
 EXPOSE 3000
-
-# Healthcheck to ensure the container is responsive
-HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:3000/api/globals/settings', (res) => { if (res.statusCode === 200) process.exit(0); else process.exit(1); })" || exit 1
-
-# Start the standalone Next.js server
 CMD ["node", "server.js"]
