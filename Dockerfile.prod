@@ -18,6 +18,8 @@ RUN adduser --system --uid 1001 nextjs
 COPY public ./public
 COPY .next/standalone ./
 COPY .next/static ./.next/static
+COPY .next/server ./.next/server
+COPY .next/BUILD_ID ./.next/BUILD_ID
 
 # Setup persistent directory for local media uploads (Payload CMS defaults)
 RUN mkdir -p public/media && chown -R nextjs:nodejs public/media

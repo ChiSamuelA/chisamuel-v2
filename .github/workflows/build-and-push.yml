@@ -164,6 +164,8 @@ jobs:
           path: |
             .next/standalone
             .next/static
+            .next/server
+            .next/BUILD_ID
             public
 
   # ==========================================
