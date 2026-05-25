@@ -151,6 +151,9 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
         run: pnpm run build
 
+      - name: Copy @swc/helpers into standalone
+        run: cp -r node_modules/@swc/helpers .next/standalone/node_modules/@swc/helpers
+
       - uses: docker/setup-qemu-action@v3
 
       - uses: docker/setup-buildx-action@v3
