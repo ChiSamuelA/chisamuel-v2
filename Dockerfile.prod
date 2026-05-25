@@ -20,6 +20,7 @@ COPY .next/standalone ./
 COPY .next/static ./.next/static
 COPY .next/server ./.next/server
 COPY .next/BUILD_ID ./.next/BUILD_ID
+COPY .next/*.json ./.next/
 
 RUN npm install --no-audit --no-fund @swc/helpers
 

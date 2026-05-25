@@ -166,6 +166,7 @@ jobs:
             .next/static
             .next/server
             .next/BUILD_ID
+            .next/*.json
             public
 
   # ==========================================
