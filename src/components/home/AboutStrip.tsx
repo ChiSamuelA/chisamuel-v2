@@ -15,7 +15,6 @@ export default function AboutStrip({ label, headline, p1, p2, p3, quote }: About
   // For EN: "ship", For FR: "sortent"
   const formatHeadline = (text: string) => {
     const targetWords = ['ship', 'sortent']
-    let formatted = text
     
     for (const word of targetWords) {
       if (text.includes(word)) {
@@ -76,7 +75,7 @@ export default function AboutStrip({ label, headline, p1, p2, p3, quote }: About
           </p>
           
           <p className="font-serif italic text-copper text-[22px] mt-3 lg:mt-5 text-pretty leading-snug">
-            "{quote}"
+            &quot;{quote}&quot;
           </p>
         </div>
 
