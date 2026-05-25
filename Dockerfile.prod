@@ -3,7 +3,7 @@ FROM node:20-alpine AS base
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
-RUN corepack enable pnpm
+RUN npm install -g pnpm@10
 COPY package.json pnpm-lock.yaml* ./
 RUN pnpm i --frozen-lockfile
 
@@ -18,7 +18,7 @@ ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL
 ENV PAYLOAD_IGNORE_DATABASE=true
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
-RUN corepack enable pnpm
+RUN npm install -g pnpm@10
 RUN pnpm run build
 
 FROM base AS runner
