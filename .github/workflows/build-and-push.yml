@@ -188,6 +188,12 @@ jobs:
           name: standalone-build
           path: .
 
+      - name: Verify Build Artifacts
+        run: |
+          echo "=== .next contents ===" && ls -la .next/
+          echo "=== standalone ===" && ls .next/standalone/ | head -5
+          du -sh .next/
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
