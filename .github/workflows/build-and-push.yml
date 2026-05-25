@@ -163,19 +163,23 @@ jobs:
           echo "=== server ===" && ls -la .next/server/ || echo "SERVER NOT FOUND"
           echo "=== JSON files ===" && ls .next/*.json || echo "NO JSON FILES"
 
+      - name: Stage Build Artifacts
+        run: |
+          mkdir -p .docker-stage/.next
+          cp -r .next/standalone .docker-stage/.next/
+          cp -r .next/static .docker-stage/.next/
+          cp -r .next/server .docker-stage/.next/
+          cp .next/BUILD_ID .docker-stage/.next/
+          cp .next/*.json .docker-stage/.next/
+          cp -r public .docker-stage/
+
       - name: Upload Standalone Build Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: standalone-build
           retention-days: 1
           if-no-files-found: error
-          path: |
-            .next/standalone
-            .next/static
-            .next/server
-            .next/BUILD_ID
-            .next/*.json
-            public
+          path: .docker-stage
 
   # ==========================================
   # JOB 5: Package & Push Docker Image (Sequential: Runs AFTER compile is 100% complete)
