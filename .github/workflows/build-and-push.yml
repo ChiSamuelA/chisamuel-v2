@@ -162,12 +162,9 @@ jobs:
           name: standalone-build
           retention-days: 1
           path: |
-            .next/standalone
-            .next/static
-            .next/server
-            .next/BUILD_ID
-            .next/*.json
+            .next
             public
+            !.next/cache
 
   # ==========================================
   # JOB 5: Package & Push Docker Image (Sequential: Runs AFTER compile is 100% complete)
