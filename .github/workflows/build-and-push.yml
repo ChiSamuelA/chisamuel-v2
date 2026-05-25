@@ -156,15 +156,22 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
         run: pnpm run build
 
+      - name: Prepare Standalone Build Artifacts
+        run: |
+          mkdir -p build-art/.next
+          cp -r .next/standalone build-art/.next/
+          cp -r .next/static build-art/.next/
+          cp -r .next/server build-art/.next/
+          cp -r .next/BUILD_ID build-art/.next/
+          cp -r .next/*.json build-art/.next/
+          cp -r public build-art/
+
       - name: Upload Standalone Build Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: standalone-build
           retention-days: 1
-          path: |
-            .next
-            public
-            !.next/cache
+          path: build-art
 
   # ==========================================
   # JOB 5: Package & Push Docker Image (Sequential: Runs AFTER compile is 100% complete)
