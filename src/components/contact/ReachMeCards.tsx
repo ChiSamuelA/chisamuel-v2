@@ -5,7 +5,7 @@ interface ReachMeCardsProps {
     label: string
     email: string
     phone: string
-    whatsapp: string
+    linkedin: string
     github: string
   }
 }

@@ -11,13 +11,93 @@ env:
   NEXT_PUBLIC_SERVER_URL: https://chisamuel.com
 
 jobs:
-  build-and-push:
+  # ==========================================
+  # JOB 1: Environment & Dependency Setup
+  # ==========================================
+  setup:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    # Spin up MongoDB service on the GitHub Actions runner to resolve build-time database queries
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+  # ==========================================
+  # JOB 2: Code Quality & Type Checks
+  # ==========================================
+  check:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Linting
+        run: pnpm run lint
+
+      - name: Run TypeScript typechecking
+        run: pnpm exec tsc --noEmit
+
+  # ==========================================
+  # JOB 3: Integration & Unit Tests
+  # ==========================================
+  test:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Tests
+        run: pnpm run test:int
+
+  # ==========================================
+  # JOB 4: Compile Production Build
+  # ==========================================
+  compile:
+    runs-on: ubuntu-latest
+    needs: [check, test]
+    # Spin up MongoDB service to handle build-time static page queries
     services:
       mongodb:
         image: mongo:6.0
@@ -33,13 +113,65 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up QEMU (for multi-platform compatibility)
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Next.js App
+        env:
+          # Use local MongoDB service container on port 27017
+          DATABASE_URL: mongodb://localhost:27017/build-db
+          # Use a self-contained placeholder secret (no Github secrets needed!)
+          PAYLOAD_SECRET: a_temporary_build_secret_to_pass_compilation_12345
+          NEXT_PUBLIC_SERVER_URL: ${{ env.NEXT_PUBLIC_SERVER_URL }}
+          NODE_ENV: production
+          NEXT_TELEMETRY_DISABLED: 1
+        run: pnpm run build
+
+      - name: Upload Standalone Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: standalone-build
+          retention-days: 1
+          path: |
+            .next/standalone
+            .next/static
+            public
+
+  # ==========================================
+  # JOB 5: Package & Push Docker Image
+  # ==========================================
+  publish:
+    runs-on: ubuntu-latest
+    needs: compile
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download Standalone Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: standalone-build
+          path: .
+
+      - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        with:
-          driver-opts: network=host
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
@@ -65,11 +197,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          # Use host networking so the build can talk to the temp MongoDB service
-          network: host
-          build-args: |
-            DATABASE_URL=mongodb://localhost:27017/build-db
-            PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET_BUILD }}
-            NEXT_PUBLIC_SERVER_URL=${{ env.NEXT_PUBLIC_SERVER_URL }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
