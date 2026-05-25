@@ -190,7 +190,16 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: standalone-build
-          path: .
+          path: standalone-build
+
+      - name: Ensure Artifacts are in Workspace Root
+        run: |
+          echo "Moving artifacts from standalone-build directory to workspace root..."
+          cp -r standalone-build/.next .
+          cp -r standalone-build/public .
+          rm -rf standalone-build
+          echo "Verifying .next contents:"
+          ls -la .next
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
