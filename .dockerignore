@@ -4,8 +4,13 @@
 # Ignore local dependency folders
 node_modules
 
-# Ignore Next.js build cache to keep build context lightweight
-.next/cache
+# Exclude Next.js completely but allow only the standalone build artifacts
+.next
+!.next/standalone
+!.next/static
+!.next/server
+!.next/BUILD_ID
+!.next/*.json
 
 # Ignore test results and reports
 test-results
