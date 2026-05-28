@@ -29,8 +29,28 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
-  description: 'Chi Samuel — Senior Software Engineer. Full-stack · Cloud Infrastructure.',
-  title: 'Chi Samuel',
+  description: 'Chi Samuel Apeng — Senior Software Engineer & Full-Stack Cloud Architect. Leading high-performance Next.js apps, robust Kubernetes deployments, and enterprise-grade tech stacks.',
+  title: {
+    template: '%s | Chi Samuel Apeng',
+    default: 'Chi Samuel Apeng | Senior Software Engineer & Cloud Architect',
+  },
+  metadataBase: new URL('https://chisamuel.com'),
+  icons: {
+    icon: '/favicon.ico',
+  },
+  openGraph: {
+    title: 'Chi Samuel Apeng | Senior Software Engineer & Cloud Architect',
+    description: 'Senior Software Engineer & Full-Stack Cloud Architect specializing in Next.js, Payload CMS, and Kubernetes workloads.',
+    url: 'https://chisamuel.com',
+    siteName: 'Chi Samuel Apeng Portfolio',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chi Samuel Apeng | Senior Software Engineer & Cloud Architect',
+    description: 'Senior Software Engineer & Full-Stack Cloud Architect.',
+  },
 }
 
 export function generateStaticParams() {
@@ -51,6 +71,41 @@ export default async function RootLayout(props: {
 
   const messages = await getMessages(locale)
 
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    'name': 'Chi Samuel Apeng',
+    'alternateName': 'Chi Samuel',
+    'url': 'https://chisamuel.com',
+    'image': 'https://chisamuel.com/og-image.jpg',
+    'jobTitle': 'Senior Software Engineer & Cloud Architect',
+    'address': {
+      '@type': 'PostalAddress',
+      'addressLocality': 'Yaoundé',
+      'addressCountry': 'CM',
+    },
+    'email': 'me@chisamuel.com',
+    'telephone': '+237659224784',
+    'knowsAbout': [
+      'Software Engineering',
+      'Full-Stack Web Development',
+      'Cloud Infrastructure',
+      'Kubernetes (K8s)',
+      'Docker',
+      'Next.js',
+      'React',
+      'Payload CMS',
+      'TypeScript',
+      'DevOps',
+      'SEO Optimization',
+    ],
+    'sameAs': [
+      'https://github.com/ChiSamuelA',
+      'https://cm.linkedin.com/in/chi-samuel-apeng',
+      'https://wa.me/237659224784',
+    ],
+  }
+
   return (
     <html
       lang={locale}
@@ -58,6 +113,10 @@ export default async function RootLayout(props: {
       style={{ background: 'oklch(0.12 0.005 80)' }}
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
         <Nav locale={locale} messages={messages!.home.nav} />
         <main>{children}</main>
         <Footer />

@@ -1,0 +1,90 @@
+{
+  "slug": "thrift-plug",
+  "n": "04",
+  "year": "2026",
+  "tag": "E-Commerce & Generative AI",
+  "role": "Lead Fullstack & DevOps Engineer",
+  "stack": "Next.js 15 · Payload CMS · MongoDB · Gemini Flash AI · Cloudflare R2 · Docker · GitHub Actions · Vitest",
+  "href": "https://thrift-plug.com",
+  "client": "Thrift Plug (Cameroon)",
+  "duration": "3 Months",
+  "status": "In Production",
+  "featured": true,
+  "order": 4,
+  "en": {
+    "name": "Thrift Plug",
+    "tagline": "AI-powered premium thrift e-commerce with real-time atomic inventory locking.",
+    "overview": "Thrift Plug is a custom-engineered e-commerce platform built to solve the unique operational and inventory challenges of the vintage retail market in Cameroon (serving Douala and Yaoundé). Unlike standard e-commerce sites where items have multiple quantities, thrift stores deal exclusively with one-of-a-kind products. This platform features a high-performance headless Next.js frontend integrated with Payload CMS, automated multimodal AI cataloging via Google Gemini, a custom atomic stock-locking engine to prevent double-purchasing race conditions, and a fully containerized CI/CD DevOps pipeline for continuous delivery.",
+    "challenges": [
+      {
+        "title": "Race Conditions in Unique-Item Inventory",
+        "description": "Since every thrifted garment is one-of-a-kind, standard database checkouts create a critical vulnerability: if two customers attempt to buy the same item at the exact same millisecond, both transactions might process, resulting in double-selling. Traditional database reads and writes are not fast enough to prevent this race condition."
+      },
+      {
+        "title": "Garment Cataloging Bottlenecks",
+        "description": "Uploading hundreds of unique garments weekly requires manual data entry for brands, sizes, colors, categories, and descriptions. This process represents a massive operational bottleneck that limits business scalability and introduces human error."
+      },
+      {
+        "title": "Asset Bandwidth & Delivery Costs",
+        "description": "Thrift shoppers rely entirely on high-resolution image galleries to assess garment condition. Storing and serving thousands of heavy images directly from a application server is expensive and severely degrades website performance on slower local mobile networks."
+      }
+    ],
+    "approach": "To build a seamless and high-performing experience, I designed a multi-layered technical architecture:\n\n1. Atomic Lock Strategy: I implemented a custom Next.js Server Action that directly communicates with raw MongoDB collections. Using the atomic findOneAndUpdate operation, items are marked as 'locked' for 10 minutes at the exact microsecond checkout is initiated. Any concurrent checkout attempt is automatically blocked and rolled back. An n8n-triggered cron worker hits a secure API route periodically to sweep and release expired locks.\n\n2. AI-Assisted Cataloging Pipeline: I wrote a Payload CMS beforeChange hook that intercepts newly uploaded garment images and sends them to the multimodal Google Gemini Flash API. The model analyzes the photo and automatically generates the product name, brand, color, category, and an engaging sales description in French. A secondary hook automatically registers new categories into the global settings, removing manual database entries.\n\n3. CDN-Backed Media Storage: Integrated Cloudflare R2 object storage using an S3 adapter and routed all assets through a high-speed custom CDN domain to ensure lightning-fast image loading and zero database load.\n\n4. Enterprise CI/CD & Testing: Engineered a production-grade GitHub Actions pipeline. On every commit to production, the runner initiates a Docker container environment, spins up an isolated MongoDB database service, executes automated Vitest integration tests, compiles the Next.js production build, and pushes a lightweight Docker image to the GitHub Container Registry (GHCR) for immediate Kubernetes/VPS deployment.",
+    "outcomes": [
+      {
+        "value": "100%",
+        "label": "Zero Double-Purchasing Errors in Production"
+      },
+      {
+        "value": "< 5s",
+        "label": "Multimodal AI Garment Cataloging and Analysis Time"
+      },
+      {
+        "value": "100%",
+        "label": "Automated DevOps CI/CD Deployment Pipeline"
+      }
+    ],
+    "gallery": [
+      { "imageName": "thrift-plug-1.jpg", "caption": "Thrift Plug homepage grid featuring premium one-of-a-kind vintage apparel" },
+      { "imageName": "thrift-plug-2.jpg", "caption": "Multimodal AI auto-cataloging interface analyzing newly uploaded garment images" }
+    ]
+  },
+  "fr": {
+    "name": "Thrift Plug",
+    "tagline": "Plateforme e-commerce de friperie haut de gamme avec tarification et catégorisation assistées par IA et réservation de stock en temps réel.",
+    "overview": "Thrift Plug est une plateforme e-commerce sur mesure conçue pour surmonter les défis opérationnels et de gestion de stock uniques du marché de la friperie au Cameroun (ciblant Douala et Yaoundé). Contrairement au e-commerce classique, chaque vêtement de friperie est une pièce unique. La plateforme associe un frontend ultra-rapide sous Next.js à Payload CMS, un système de catalogage automatisé par IA multimodale via Google Gemini, un moteur d'acquisition de stock atomique en temps réel pour empêcher les conflits d'achat concurrents, et un pipeline DevOps CI/CD entièrement conteneurisé.",
+    "challenges": [
+      {
+        "title": "Concurrence critique et double-achat sur pièce unique",
+        "description": "Chaque article étant unique, si deux clients tentent d'acheter le même vêtement à la même milliseconde, les requêtes de base de données traditionnelles risquent de valider les deux paniers. Cela entraîne des erreurs d'inventaire critiques et une mauvaise expérience utilisateur."
+      },
+      {
+        "title": "Goulot d'étranglement de la saisie d'informations",
+        "description": "Renseigner manuellement le titre, la marque, la couleur, la catégorie et rédiger une description de vente attrayante en français pour des centaines d'articles uniques chaque semaine constitue une tâche chronophage et sujette aux erreurs humaines."
+      },
+      {
+        "title": "Performances d'affichage des galeries d'images",
+        "description": "Les clients de friperie ont besoin d'images haute résolution sous plusieurs angles pour évaluer la qualité des vêtements. Charger ces fichiers lourds directement depuis le serveur d'application ralentit le site, en particulier sur les connexions mobiles locales."
+      }
+    ],
+    "approach": "Pour proposer une expérience fluide et hautement performante, j'ai mis en place une architecture technique avancée :\n\n1. Stratégie de verrouillage atomique : J'ai développé une Server Action Next.js personnalisée accédant directement à MongoDB. Grâce à l'opération atomique findOneAndUpdate, les articles sont réservés pendant 10 minutes au moment exact du passage à la caisse. Toute tentative d'achat concurrente échoue et est annulée instantanément. Un cron automatisé déclenché par n8n libère périodiquement les réservations expirées.\n\n2. Pipeline de catalogage assisté par IA : J'ai configuré un hook beforeChange dans Payload CMS qui transmet la photo du vêtement fraîchement importée à l'API Google Gemini Flash. L'IA analyse l'image et génère instantanément le titre, la marque, la couleur, la catégorie idéale et une description marketing persuasive en français. Un second hook synchronise automatiquement la nouvelle catégorie générée avec les paramètres globaux de la boutique.\n\n3. Stockage d'images Cloudflare R2 : Liaison transparente du stockage d'images via un protocole S3 avec diffusion par CDN pour garantir un temps de chargement immédiat et soulager la base de données.\n\n4. Pipeline CI/CD DevOps robuste : Conception d'un workflow GitHub Actions. Lors de chaque mise en production, le runner lance un conteneur MongoDB isolé, exécute les tests d'intégration Vitest, compile le projet Next.js et pousse l'image Docker finale sur GitHub Container Registry (GHCR) pour un déploiement continu sécurisé.",
+    "outcomes": [
+      {
+        "value": "100%",
+        "label": "Zéro erreur de double achat en production"
+      },
+      {
+        "value": "< 5s",
+        "label": "Temps d'analyse et catalogage d'article par IA"
+      },
+      {
+        "value": "100%",
+        "label": "Déploiements automatisés via Docker CI/CD"
+      }
+    ],
+    "gallery": [
+      { "imageName": "thrift-plug-1.jpg", "caption": "Page d'accueil de la boutique Thrift Plug présentant les collections de pièces uniques" },
+      { "imageName": "thrift-plug-2.jpg", "caption": "Console d'importation assistée par IA Gemini Flash analysant et catégorisant les vêtements" }
+    ]
+  }
+}

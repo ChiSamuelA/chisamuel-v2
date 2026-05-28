@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   }
 
   return {
-    title: `${project.name} | Chi Samuel`,
+    title: project.name,
     description: project.tagline || project.overview?.substring(0, 160),
   }
 }

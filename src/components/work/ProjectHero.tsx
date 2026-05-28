@@ -15,7 +15,7 @@ interface ProjectHeroProps {
 }
 
 export default function ProjectHero({ project }: ProjectHeroProps) {
-  const { n, tag, name, tagline, client, role, year, duration, status, heroImage, stack } = project
+  const { n, tag, name, tagline, client, role, year, duration, status, heroImage, stack, href } = project
 
   return (
     <section className="relative overflow-hidden bg-ink-deep px-5 md:px-14 lg:px-[72px] pt-36 lg:pt-48 pb-24">
@@ -69,6 +69,21 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
           <p className="mt-8 font-serif italic text-paper-dim text-[18px] sm:text-[20px] max-w-[720px] leading-relaxed">
             {tagline}
           </p>
+        )}
+
+        {/* Live Project Link */}
+        {href && (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-8 font-mono text-[11px] text-copper hover:text-paper uppercase tracking-[2px] transition-colors duration-300 group"
+          >
+            <span>Visit Live Project</span>
+            <span className="text-copper group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+              ↗
+            </span>
+          </a>
         )}
 
         {/* Metadata Grid */}

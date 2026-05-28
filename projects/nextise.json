@@ -1,0 +1,98 @@
+{
+  "slug": "nextise",
+  "n": "05",
+  "year": "2026",
+  "tag": "SaaS · AI Automation",
+  "role": "Lead Architect & DevOps Director",
+  "stack": "Next.js · Payload CMS · n8n · PostgreSQL · Kubernetes · Docker",
+  "href": "https://nextise.de",
+  "client": "Nextise",
+  "duration": "Jan 2026 - Present",
+  "status": "In Production",
+  "featured": true,
+  "order": 5,
+  "en": {
+    "name": "Nextise",
+    "tagline": "An enterprise-grade SaaS and AI automation ecosystem empowering DACH businesses through scalable workflows and custom LLMs.",
+    "overview": "Nextise is a premium German SaaS and AI-driven automation ecosystem focused on transforming business operations for medium-to-large enterprises in the DACH region. Operating as a holistic technology powerhouse, the platform connects customized, GDPR-compliant LLMs, autonomous sales assistants, and enterprise workflow integrations (powered by n8n and Next.js). By replacing repetitive manual processes with highly secure, self-healing automated nodes, Nextise delivers massive operational savings, data-integrity assurances, and zero vendor lock-in for its clients.",
+    "challenges": [
+      {
+        "title": "Scale & Multi-Tenant Process Isolation",
+        "description": "Running hundreds of complex, high-concurrency n8n workflow nodes processing sensitive, real-time enterprise data requires robust sandbox isolation, self-healing databases, and zero-latency container communications to prevent service choke points."
+      },
+      {
+        "title": "GDPR Compliance & Critical Data Security",
+        "description": "Handling critical company knowledge bases (RAG - Retrieval-Augmented Generation) and automated lead qualifications demands strict GDPR-compliant server architecture, restricted data routes, and military-grade database security."
+      },
+      {
+        "title": "Continuous Integration & Zero-Downtime Infrastructure",
+        "description": "Maintaining 99.99% high availability and seamless rolling updates across dynamic multi-container applications (Next.js storefront, Payload CMS API, PostgreSQL database clusters, and n8n runners) without interrupting live business integrations."
+      }
+    ],
+    "approach": "To deliver an enterprise-grade infrastructure, I architected and deployed a highly redundant, self-healing Kubernetes (K8s) cluster that containerized every operational node. I integrated PostgreSQL database clusters with automated replication and failover, and designed strict data-isolation boundaries for multi-tenant n8n workflow engines. To address security, I built strict GDPR-compliant private networks with origin protection inside the cluster. Finally, I established custom CI/CD pipelines via GitHub Actions, reducing deployment times by over 40% while maintaining absolute reliability for critical automated pipelines.",
+    "outcomes": [
+      {
+        "value": "40%+",
+        "label": "Deployment pipeline speed optimization via custom GitHub Actions"
+      },
+      {
+        "value": "99.99%",
+        "label": "Automation node uptime under heavy cluster loads"
+      },
+      {
+        "value": "100%",
+        "label": "GDPR-compliant private network and database architecture"
+      },
+      {
+        "value": "n8n + K8s",
+        "label": "Scalable dynamic workflow engine and container DevOps design"
+      }
+    ],
+    "gallery": [
+      { "imageName": "nextise-1.jpg", "caption": "Sleek corporate dashboard showing dynamic enterprise AI workflow builder" },
+      { "imageName": "nextise-2.jpg", "caption": "Autonomous sales lead assistant with custom RAG knowledge base integration" }
+    ]
+  },
+  "fr": {
+    "name": "Nextise",
+    "tagline": "Un écosystème SaaS et d'automatisation IA d'entreprise optimisant les processus métiers via des flux de travail évolutifs.",
+    "overview": "Nextise est un écosystème d'automatisation basé sur l'IA et le SaaS, conçu pour transformer les opérations commerciales des moyennes et grandes entreprises de la région DACH. Fonctionnant comme une véritable centrale technologique, la plateforme intègre des LLM personnalisés et conformes au RGPD, des assistants de vente autonomes et des workflows d'entreprise complexes (propulsés par n8n et Next.js). En remplaçant les processus manuels par des nœuds d'automatisation hautement sécurisés et auto-réparateurs, Nextise permet à ses clients de réaliser des économies opérationnelles majeures.",
+    "challenges": [
+      {
+        "title": "Isolation des Processus & Mise à l'Échelle",
+        "description": "L'exécution de centaines de flux de travail n8n simultanés traitant des données d'entreprise hautement sensibles exigeait une isolation robuste en sandbox, des bases de données auto-réparatrices et un routage de conteneurs à latence zéro."
+      },
+      {
+        "title": "Conformité RGPD & Sécurité des Données",
+        "description": "La gestion des bases de connaissances internes de l'entreprise (systèmes RAG) et la qualification automatisée des leads nécessitaient une architecture serveur strictement conforme au RGPD et des chemins de données cryptés."
+      },
+      {
+        "title": "Intégration Continue & Maintenance d'Infrastructure",
+        "description": "Assurer une haute disponibilité de 99,99 % et des mises à jour fluides sans interruption de service sur des architectures multi-conteneurs dynamiques (Next.js, Payload CMS, clusters PostgreSQL et serveurs n8n)."
+      }
+    ],
+    "approach": "Pour fournir une infrastructure de niveau entreprise, j'ai conçu et déployé un cluster Kubernetes (K8s) hautement redondant et auto-réparateur conteneurisant chaque nœud opérationnel. J'ai configuré des clusters PostgreSQL avec réplication automatique et basculement (failover), et délimité des frontières d'isolation réseau strictes pour les moteurs n8n. J'ai également conçu des réseaux privés conformes au RGPD avec des passerelles de sécurité internes. Enfin, j'ai orchestré des pipelines CI/CD personnalisés via GitHub Actions, réduisant les temps de déploiement de plus de 40 % tout en garantissant une fiabilité absolue.",
+    "outcomes": [
+      {
+        "value": "40%+",
+        "label": "Optimisation de la vitesse des pipelines de déploiement via GitHub Actions"
+      },
+      {
+        "value": "99,99%",
+        "label": "Disponibilité des nœuds d'automatisation sous forte charge"
+      },
+      {
+        "value": "100%",
+        "label": "Conformité RGPD et architecture réseau hautement sécurisée"
+      },
+      {
+        "value": "n8n + K8s",
+        "label": "Moteur de workflow évolutif et conception DevOps conteneurisée"
+      }
+    ],
+    "gallery": [
+      { "imageName": "nextise-1.jpg", "caption": "Tableau de bord Nextise affichant le créateur de workflows d'IA d'entreprise" },
+      { "imageName": "nextise-2.jpg", "caption": "Assistant de vente autonome intégré avec base de connaissances RAG personnalisée" }
+    ]
+  }
+}

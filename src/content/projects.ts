@@ -27,6 +27,15 @@ export type Facts = {
 export const PROJECTS: Project[] = [
   { 
     n: '01', 
+    name: 'Kontakly GTM',    
+    year: '2025', 
+    stack: 'Python · Gemini · K8s',     
+    href: '', 
+    slug: 'kontakly',
+    featured: true 
+  },
+  { 
+    n: '02', 
     name: 'BarriereHilfe',    
     year: '2025', 
     stack: 'Next.js · PayloadCMS · K8s',     
@@ -35,7 +44,7 @@ export const PROJECTS: Project[] = [
     featured: true 
   },
   { 
-    n: '02', 
+    n: '03', 
     name: 'Kodschul',         
     year: '2025', 
     stack: 'Next.js · SSR · AI Agents',                   
@@ -44,31 +53,31 @@ export const PROJECTS: Project[] = [
     featured: true 
   },
   { 
-    n: '03', 
+    n: '04', 
     name: 'ThriftPlug',       
-    year: '2025', 
-    stack: 'Next.js · Stripe · Postgres',     
+    year: '2026', 
+    stack: 'Next.js · Gemini · Cloudflare R2',     
     href: 'https://thrift-plug.com/', 
     slug: 'thrift-plug',
     featured: true 
   },
   { 
-    n: '04', 
+    n: '05', 
     name: 'Nextise',          
-    year: '2024', 
+    year: '2026', 
     stack: 'Next.js · n8n · K8s',         
     href: 'https://nextise.de', 
     slug: 'nextise',
     featured: true 
   },
-  { n: '05', name: 'LinkReach',        year: '2025', stack: 'K8s · DigitalOcean',              href: '#', slug: 'linkreach' },
-  { n: '06', name: 'Autoreach',        year: '2025', stack: 'K8s · Ingress · CI/CD',           href: '#', slug: 'autoreach' },
-  { n: '07', name: 'Automatish AI',    year: '2025', stack: 'Next.js · Python · K8s',          href: '#', slug: 'automatish-ai' },
-  { n: '08', name: 'TargetDesk',       year: '2025', stack: 'Next.js · Tailwind · Node',       href: 'https://targetdesk.fr/', slug: 'targetdesk' },
-  { n: '09', name: 'Canal+ Wholesale', year: '2024', stack: 'Custom',                          href: '#', slug: 'canal-plus-wholesale' },
-  { n: '10', name: 'Nadscam (NGO)',    year: '2024', stack: 'Web platform',                    href: '#', slug: 'nadscam' },
-  { n: '11', name: 'CSB-Amasia',       year: '2024', stack: 'Web platform',                    href: '#', slug: 'csb-amasia' },
-  { n: '12', name: 'Solumentics',      year: '2023—', stack: 'Multi-stack',                     href: '#', slug: 'solumentics' },
+  { n: '06', name: 'LinkReach',        year: '2025', stack: 'K8s · DigitalOcean',              href: '#', slug: 'linkreach' },
+  { n: '07', name: 'Autoreach',        year: '2025', stack: 'K8s · Ingress · CI/CD',           href: '#', slug: 'autoreach' },
+  { n: '08', name: 'Automatish AI',    year: '2025', stack: 'Next.js · Python · K8s',          href: '#', slug: 'automatish-ai' },
+  { n: '09', name: 'TargetDesk',       year: '2025', stack: 'Next.js · Tailwind · Node',       href: 'https://targetdesk.fr/', slug: 'targetdesk' },
+  { n: '10', name: 'Canal+ Wholesale', year: '2024', stack: 'Custom',                          href: '#', slug: 'canal-plus-wholesale' },
+  { n: '11', name: 'Nadscam (NGO)',    year: '2024', stack: 'Web platform',                    href: '#', slug: 'nadscam' },
+  { n: '12', name: 'CSB-Amasia',       year: '2024', stack: 'Web platform',                    href: '#', slug: 'csb-amasia' },
+  { n: '13', name: 'Solumentics',      year: '2023—', stack: 'Multi-stack',                     href: '#', slug: 'solumentics' },
 ]
 
 export const FACTS: Facts = {
