@@ -11,6 +11,8 @@ import ProjectApproach from '@/components/work/ProjectApproach'
 import ProjectOutcomes from '@/components/work/ProjectOutcomes'
 import ProjectPagination from '@/components/work/ProjectPagination'
 
+export const revalidate = 60
+
 interface ProjectPageProps {
   params: Promise<{
     slug: string

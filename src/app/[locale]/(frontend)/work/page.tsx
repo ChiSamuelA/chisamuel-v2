@@ -4,6 +4,8 @@ import configPromise from '@/payload.config'
 import { getMessages } from '@/i18n'
 import WorkListing from '@/components/work/WorkListing'
 
+export const revalidate = 60
+
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>
 }) {

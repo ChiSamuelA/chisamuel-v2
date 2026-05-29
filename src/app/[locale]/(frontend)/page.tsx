@@ -7,6 +7,8 @@ import { getMessages } from '@/i18n'
 import { getPayload } from 'payload'
 import configPromise from '@/payload.config'
 
+export const revalidate = 60
+
 export default async function HomePage(props: {
   params: Promise<{ locale: string }>
 }) {
