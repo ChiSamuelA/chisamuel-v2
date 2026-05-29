@@ -142,14 +142,6 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - name: Seed Build Database
-        env:
-          DATABASE_URL: mongodb://localhost:27017/build-db
-          DATABASE_URI: mongodb://localhost:27017/build-db
-          PAYLOAD_SECRET: temporary-build-secret-chisamuel
-          NEXT_PUBLIC_SERVER_URL: https://chisamuel.com
-        run: pnpm run import-projects
-
       - name: Build Next.js App
         env:
           DATABASE_URL: mongodb://localhost:27017/build-db
