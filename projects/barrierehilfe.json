@@ -1,35 +1,35 @@
 {
   "slug": "barrierehilfe",
-  "n": "02",
+  "n": "01",
   "year": "2025",
   "tag": "Accessibility · Germany",
   "role": "Full-Stack Architect & DevOps Lead",
-  "stack": "Next.js · PHP · Vanilla JS · CDN · Kubernetes · Docker",
+  "stack": "Next.js · PHP · Kubernetes",
   "href": "https://barrierehilfe.de/",
   "client": "BarriereHilfe",
   "duration": "June 2025 - Nov 2025",
   "status": "Completed",
   "featured": true,
-  "order": 2,
+  "order": 1,
   "en": {
     "name": "BarriereHilfe",
     "tagline": "A secure, 3-tier accessibility compliance ecosystem delivering zero-dependency WCAG solutions at scale.",
     "overview": "BarriereHilfe is a state-of-the-art digital accessibility platform designed to bring websites into full WCAG (Web Content Accessibility Guidelines) compliance instantly. Built as an interconnected, distributed 3-tier system, the architecture comprises a high-performance Next.js marketing and auditing interface, a zero-dependency vanilla JavaScript accessibility widget served securely via a custom CDN, and a robust PHP administration dashboard.\n\nThe entire platform enables corporate and government clients to easily integrate accessibility controls on their websites by pasting a single script tag, while allowing administrators to customize, restrict, and manage widgets centrally.",
     "challenges": [
       {
-        "title": "Ultra-Lightweight Multi-Tenant Script Delivery",
-        "description": "The accessibility plugin is injected into third-party client websites, meaning it must load instantly without introducing external frameworks, dependencies, or slowing down the host website's page speed. It needed to dynamically fetch tenant-specific display configurations on the fly."
+        "title": "Ultra-Lightweight Multi-Tenant Delivery",
+        "description": "The accessibility widget runs on third-party client websites, so it had to load instantly without dragging in frameworks or slowing down the host site's page speed, while still pulling each client's own configuration on the fly."
       },
       {
-        "title": "CDN Origin Protection & Bandwidth Security",
-        "description": "Because the plugin is loaded via a public CDN script on 'cdn.barrierehilfe.de', it was highly vulnerable to bandwidth theft, unauthorized domain hotlinking, and script injection. The CDN needed strict origin security rules to restrict script loading exclusively to licensed client domains."
+        "title": "Protecting a Publicly Loaded Script",
+        "description": "A script served from a public CDN is an easy target for bandwidth theft and unauthorized reuse. It needed to load only on domains that were actually licensed to run it."
       },
       {
-        "title": "Distributed Legacy-Modern Interoperability",
-        "description": "Seamlessly coordinating real-time configuration syncs between a legacy-compatible PHP administrative back-end, a modern React/Next.js frontend, and a native Vanilla JS client-side widget required secure, lightweight APIs and high-availability container routing."
+        "title": "Keeping Three Stacks in Sync",
+        "description": "Coordinating real-time configuration updates across a legacy-friendly admin back-end, a modern frontend, and a native client-side widget required a clean, reliable integration layer rather than three systems drifting apart."
       }
     ],
-    "approach": "I architected the platform's core to separate concerns strictly across three distinct stacks. For the plugin itself, I wrote native, highly optimized Vanilla HTML, CSS, and JS, ensuring it fits under 20KB and bypasses any framework overhead. To secure the assets, I configured strict CORS policies, HTTP origin headers, and domain-restricting referer protections on the CDN to forbid unauthorized requests.\n\nI then designed secure REST API endpoints between the PHP administrative dashboard and the CDN to stream custom client configurations. Finally, I deployed the entire distributed network onto a Kubernetes (K8s) cluster with custom Ingress configurations, auto-scaling horizontal pods, and containerized Docker environments for maximum high-availability and zero-downtime rolling releases.",
+    "approach": "I split the platform into three purpose-built layers instead of forcing one stack to do everything: a dependency-free widget light enough for any client site to embed without a performance hit, a hardened delivery layer that only serves licensed domains, and an administration console for centralized control over every client's configuration.\n\nThe whole system runs on a container-orchestrated cluster set up for high availability, so updates roll out without client sites ever seeing downtime.",
     "outcomes": [
       {
         "value": "3-Tier",
@@ -60,19 +60,19 @@
     "overview": "BarriereHilfe est une plateforme d'accessibilité numérique de pointe conçue pour rendre instantanément les sites web conformes aux directives WCAG. Structuré comme un système distribué et interconnecté en 3 tiers, le projet comprend un site marketing et d'audit sous Next.js, un widget d'accessibilité en JavaScript natif léger servi de manière sécurisée par un CDN dédié, et une console d'administration robuste sous PHP.\n\nL'écosystème permet aux entreprises et aux administrations publiques d'intégrer des outils d'accessibilité en ajoutant une simple balise script, tout en permettant aux administrateurs de personnaliser et de sécuriser les fonctionnalités depuis une console centrale.",
     "challenges": [
       {
-        "title": "Distribution d'un Script Multi-Tenant Ultra-Léger",
-        "description": "Le plugin d'accessibilité étant injecté sur les sites de tiers, il devait s'exécuter instantanément sans dépendances ni frameworks lourds pour ne pas dégrader le score de performance (PageSpeed) de l'hôte, tout en chargeant dynamiquement ses configurations personnalisées."
+        "title": "Distribution Multi-Tenant Ultra-Légère",
+        "description": "Le widget d'accessibilité s'exécute sur les sites de tiers : il devait donc se charger instantanément sans dépendances lourdes ni dégrader la performance du site hôte, tout en récupérant dynamiquement la configuration propre à chaque client."
       },
       {
-        "title": "Sécurisation du CDN & Protection des Origines",
-        "description": "Le script étant accessible publiquement via 'cdn.barrierehilfe.de', il était vulnérable au vol de bande passante et au hotlinking non autorisé. Le CDN nécessitait des règles de sécurité strictes pour interdire le chargement du script en dehors des domaines clients sous licence."
+        "title": "Protéger un Script Servi Publiquement",
+        "description": "Un script distribué depuis un CDN public est une cible facile pour le vol de bande passante et la réutilisation non autorisée. Il devait donc ne se charger que sur les domaines réellement sous licence."
       },
       {
-        "title": "Interopérabilité entre Technologies Distribuées",
-        "description": "La coordination en temps réel des données entre une console administrative PHP, une vitrine moderne Next.js et un widget client en JS natif exigeait des API sécurisées, légères et un routage de conteneurs hautement performant sous Kubernetes."
+        "title": "Synchroniser Trois Environnements Techniques",
+        "description": "Coordonner en temps réel les mises à jour de configuration entre une console d'administration compatible legacy, un frontend moderne et un widget client natif exigeait une couche d'intégration fiable plutôt que trois systèmes évoluant séparément."
       }
     ],
-    "approach": "J'ai conçu l'architecture pour séparer strictement les préoccupations. Le widget d'accessibilité a été développé en JavaScript, HTML et CSS natifs ultra-optimisés, pesant moins de 20 Ko et évitant toute surcharge de framework. Pour sécuriser la distribution, j'ai configuré des politiques de CORS strictes, des en-têtes d'origine HTTP et des restrictions par référent de domaine sur le serveur CDN afin de bloquer les appels non autorisés.\n\nJ'ai conçu des points d'accès API sécurisés entre la console d'administration PHP et le CDN pour diffuser instantanément les configurations personnalisées des clients. Enfin, j'ai déployé l'ensemble du réseau sur un cluster Kubernetes (K8s) doté de règles d'Ingress personnalisées, d'autoscaling de pods et d'environnements Docker pour garantir une haute disponibilité et des déploiements fluides.",
+    "approach": "J'ai divisé la plateforme en trois couches dédiées plutôt que de tout faire reposer sur une seule stack : un widget sans dépendance, assez léger pour être intégré sur n'importe quel site client sans impact sur la performance, une couche de diffusion sécurisée qui ne sert que les domaines sous licence, et une console d'administration pour piloter la configuration de chaque client depuis un seul endroit.\n\nL'ensemble tourne sur un cluster orchestré en conteneurs, configuré pour la haute disponibilité, afin que les mises à jour se déploient sans jamais interrompre les sites clients.",
     "outcomes": [
       {
         "value": "3-Tiers",

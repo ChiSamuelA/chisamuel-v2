@@ -1,35 +1,35 @@
 {
   "slug": "kodschul",
-  "n": "03",
+  "n": "02",
   "year": "2025 - 2026",
   "tag": "EdTech · Enterprise AI",
   "role": "Core Architect & Cloud Platform Lead",
-  "stack": "Next.js · Payload CMS · TypeScript · Tailwind CSS · Kubernetes · Docker",
+  "stack": "Next.js · Payload CMS · Kubernetes",
   "href": "https://kodschul.com/",
   "client": "Kodschul GmbH",
   "duration": "Dec 2025 - Present",
   "status": "Completed",
   "featured": true,
-  "order": 3,
+  "order": 2,
   "en": {
     "name": "Kodschul",
     "tagline": "Empowering enterprise teams and developers through hands-on, high-impact IT and AI training.",
     "overview": "Kodschul is a leading German EdTech and professional training platform that empowers businesses, developers, and professionals to master state-of-the-art IT skills, Artificial Intelligence, and digital transformation. Delivering premium, hands-on seminars trusted by top-tier institutions and global leaders—including the German Federal Armed Forces (Bundeswehr), Mercedes-Benz, the Federal Police (Polizei), and Siemens—the platform bridges the gap between theory and real-world execution.\n\nBuilt on an advanced Next.js core integrated with Payload CMS, the platform serves thousands of learners across Europe, offering scalable, real-time dynamic course paths, robust multi-language localization, and highly targeted search discoverability.",
     "challenges": [
       {
-        "title": "Infrastructure Scaling & High Availability",
-        "description": "During major educational campaigns and enterprise training rollouts, the platform experienced sudden traffic spikes. It required a highly resilient, modern cloud infrastructure that guarantees 99.9% uptime, automated scale-out, and continuous zero-downtime deployment pipelines."
+        "title": "Staying Reliable Under Campaign Traffic",
+        "description": "Major training rollouts brought sudden traffic spikes. The platform needed infrastructure that could absorb them without downtime or a dip in reliability."
       },
       {
-        "title": "Vast Dynamic Course & Curriculum Synchronization",
-        "description": "Managing dozens of specialized technical courses directly in a database was highly inefficient. The content creators needed a clean pipeline to sync comprehensive educational courses and metadata dynamically from git-tracked Markdown sources into Payload CMS without database friction."
+        "title": "A Growing Course Catalog Outgrowing Manual Entry",
+        "description": "Managing dozens of specialized courses by hand in the database didn't scale. Content creators needed a way to publish and update course content without fighting the CMS."
       },
       {
-        "title": "Search Discoverability in a Competitive EdTech Space",
-        "description": "Ranking for highly competitive German IT and AI keywords required flawless technical SEO. The site needed robust semantic HTML, custom JSON-LD schema generation, optimized static generation structures, and ultra-fast page load times to capture search engine priority."
+        "title": "Ranking in a Competitive EdTech Market",
+        "description": "Winning visibility for competitive German IT and AI training keywords meant technical SEO had to be treated as a first-class part of the build, not an afterthought."
       }
     ],
-    "approach": "To overcome these challenges and ensure enterprise-grade reliability, I designed and configured an end-to-end Kubernetes (K8s) cluster workflow. I structured the containerized environments using Docker and set up automated, highly resilient CI/CD pipelines to guarantee flawless zero-downtime releases.\n\nOn the application layer, I significantly refactored the Next.js core codebase, standardizing design tokens, improving component reusability, and optimizing page weight. I built out a robust data ingestion pipeline that programmatically parsed local Markdown curriculum assets directly into the Payload CMS via custom sync scripts. Finally, I orchestrated a complete SEO architecture overhaul, refining dynamic metadata injection, structuring localized routing, and generating semantic markup that positioned Kodschul at the top of organic search results for premium IT courses.",
+    "approach": "I rebuilt the platform's foundation for enterprise-grade reliability: a resilient, containerized cluster with automated, zero-downtime deployments so campaign traffic spikes are a non-event.\n\nOn the application side, I refactored the Next.js core for consistency and performance, and built a lightweight content pipeline that lets the team publish and update the course catalog without touching the database directly. I then rebuilt the site's SEO foundations end-to-end — structured metadata, clean routing, and fast page loads — which moved Kodschul to the top of organic search for its core training keywords.",
     "outcomes": [
       {
         "value": "100%",
@@ -59,19 +59,19 @@
     "overview": "Kodschul est une plateforme d'apprentissage allemande de premier plan spécialisée dans les technologies de l'information, l'intelligence artificielle et la transformation digitale des entreprises. Proposant des séminaires d'excellence basés sur l'apprentissage par la pratique, la plateforme bénéficie de la confiance d'institutions et de leaders mondiaux tels que l'Armée fédérale allemande (Bundeswehr), Mercedes-Benz, la Police fédérale (Polizei) et Siemens. Le site fait le pont entre la théorie académique et l'exécution pratique.\n\nConçue autour d'un cœur technologique avancé Next.js intégré à Payload CMS, elle offre des parcours de formation dynamiques en temps réel, une localisation multilingue robuste et une découvrabilité de premier plan pour des milliers d'apprenants à travers l'Europe.",
     "challenges": [
       {
-        "title": "Dimensionnement de l'infrastructure & Haute Disponibilité",
-        "description": "Lors des campagnes éducatives majeures et des déploiements de formations en entreprise, la plateforme a connu des pics de trafic soudains. Elle nécessitait une infrastructure cloud moderne et hautement résiliente garantissant une disponibilité de 99,9 %, un dimensionnement automatique et des pipelines de déploiement continu sans interruption."
+        "title": "Rester Fiable Sous les Pics de Trafic",
+        "description": "Les grandes campagnes de formation généraient des pics de trafic soudains. La plateforme devait les absorber sans interruption ni perte de fiabilité."
       },
       {
-        "title": "Synchronisation Dynamique du Programme de Cours",
-        "description": "La gestion de dizaines de cours techniques spécialisés directement dans une base de données était inefficace. Les créateurs de contenu avaient besoin d'un pipeline fluide pour synchroniser dynamiquement les cours et leurs métadonnées depuis des sources Markdown versionnées sous Git vers Payload CMS sans friction de base de données."
+        "title": "Un Catalogue de Cours qui Dépassait la Saisie Manuelle",
+        "description": "Gérer des dizaines de cours spécialisés à la main dans la base de données ne tenait plus la charge. Les créateurs de contenu avaient besoin de publier et mettre à jour les cours sans se battre avec le CMS."
       },
       {
-        "title": "Visibilité et Référencement (SEO) dans un Secteur Concurrentiel",
-        "description": "Se positionner sur des mots-clés allemands hautement concurrentiels en informatique et IA exigeait un SEO technique irréprochable. Le site nécessitait un HTML sémantique robuste, la génération de schémas JSON-LD personnalisés, des structures de génération statique optimisées et des temps de chargement ultra-rapides."
+        "title": "Se Positionner sur un Marché EdTech Concurrentiel",
+        "description": "Gagner en visibilité sur des mots-clés allemands très concurrentiels en formation IT et IA exigeait de traiter le SEO technique comme une priorité de conception, pas comme un ajustement après coup."
       }
     ],
-    "approach": "Pour surmonter ces défis et garantir une fiabilité de niveau entreprise, j'ai conçu et configuré un flux de travail complet basé sur un cluster Kubernetes (K8s). J'ai structuré les environnements conteneurisés avec Docker et mis en place des pipelines CI/CD automatisés et hautement résilients pour garantir des déploiements fluides et sans interruption de service.\n\nAu niveau de la couche applicative, j'ai considérablement restructuré le code Next.js, en standardisant les jetons de conception, en améliorant la réutilisation des composants et en optimisant le poids des pages. J'ai développé un pipeline d'intégration de données robuste pour analyser les ressources Markdown du programme de cours local directement dans Payload CMS via des scripts de synchronisation personnalisés. Enfin, j'ai orchestré une refonte complète de l'architecture SEO, en affinant l'injection dynamique des métadonnées, en structurant les routes localisées et en générant un balisage sémantique qui a propulsé Kodschul au sommet des résultats de recherche organique.",
+    "approach": "J'ai reconstruit les fondations de la plateforme pour une fiabilité de niveau entreprise : un cluster conteneurisé et résilient avec des déploiements automatisés sans interruption, pour que les pics de trafic passent inaperçus.\n\nCôté application, j'ai restructuré le cœur Next.js pour plus de cohérence et de performance, et développé un pipeline de contenu léger permettant à l'équipe de publier et mettre à jour le catalogue de cours sans toucher directement à la base de données. J'ai ensuite refondu entièrement les fondations SEO du site — métadonnées structurées, routage propre, chargement rapide — ce qui a propulsé Kodschul en tête des résultats de recherche organique sur ses mots-clés de formation principaux.",
     "outcomes": [
       {
         "value": "100%",

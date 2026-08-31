@@ -29,18 +29,18 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
-  description: 'Chi Samuel Apeng — Senior Software Engineer & Full-Stack Cloud Architect. Leading high-performance Next.js apps, robust Kubernetes deployments, and enterprise-grade tech stacks.',
+  description: 'Chi Samuel Apeng — Full-Stack Developer & Cloud Architect. Leading high-performance Next.js apps, robust Kubernetes deployments, and enterprise-grade tech stacks.',
   title: {
     template: '%s | Chi Samuel Apeng',
-    default: 'Chi Samuel Apeng | Senior Software Engineer & Cloud Architect',
+    default: 'Chi Samuel Apeng | Full-Stack Developer & Cloud Architect',
   },
   metadataBase: new URL('https://chisamuel.com'),
   icons: {
     icon: '/favicon.ico',
   },
   openGraph: {
-    title: 'Chi Samuel Apeng | Senior Software Engineer & Cloud Architect',
-    description: 'Senior Software Engineer & Full-Stack Cloud Architect specializing in Next.js, Payload CMS, and Kubernetes workloads.',
+    title: 'Chi Samuel Apeng | Full-Stack Developer & Cloud Architect',
+    description: 'Full-Stack Developer & Cloud Architect specializing in Next.js, Payload CMS, and Kubernetes workloads.',
     url: 'https://chisamuel.com',
     siteName: 'Chi Samuel Apeng Portfolio',
     locale: 'en_US',
@@ -48,8 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chi Samuel Apeng | Senior Software Engineer & Cloud Architect',
-    description: 'Senior Software Engineer & Full-Stack Cloud Architect.',
+    title: 'Chi Samuel Apeng | Full-Stack Developer & Cloud Architect',
+    description: 'Full-Stack Developer & Cloud Architect.',
   },
 }
 
@@ -78,7 +78,7 @@ export default async function RootLayout(props: {
     'alternateName': 'Chi Samuel',
     'url': 'https://chisamuel.com',
     'image': 'https://chisamuel.com/og-image.jpg',
-    'jobTitle': 'Senior Software Engineer & Cloud Architect',
+    'jobTitle': 'Full-Stack Developer & Cloud Architect',
     'address': {
       '@type': 'PostalAddress',
       'addressLocality': 'Yaoundé',

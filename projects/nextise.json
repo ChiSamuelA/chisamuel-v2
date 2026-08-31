@@ -1,35 +1,35 @@
 {
   "slug": "nextise",
-  "n": "05",
+  "n": "04",
   "year": "2026",
   "tag": "SaaS · AI Automation",
   "role": "Lead Architect & DevOps Director",
-  "stack": "Next.js · Payload CMS · n8n · PostgreSQL · Kubernetes · Docker",
+  "stack": "Next.js · n8n · Kubernetes",
   "href": "https://nextise.de",
   "client": "Nextise",
   "duration": "Jan 2026 - Present",
   "status": "In Production",
   "featured": true,
-  "order": 5,
+  "order": 4,
   "en": {
     "name": "Nextise",
     "tagline": "An enterprise-grade SaaS and AI automation ecosystem empowering DACH businesses through scalable workflows and custom LLMs.",
     "overview": "Nextise is a premium German SaaS and AI-driven automation ecosystem focused on transforming business operations for medium-to-large enterprises in the DACH region. Operating as a holistic technology powerhouse, the platform connects customized, GDPR-compliant LLMs, autonomous sales assistants, and enterprise workflow integrations (powered by n8n and Next.js). By replacing repetitive manual processes with highly secure, self-healing automated nodes, Nextise delivers massive operational savings, data-integrity assurances, and zero vendor lock-in for its clients.",
     "challenges": [
       {
-        "title": "Scale & Multi-Tenant Process Isolation",
-        "description": "Running hundreds of complex, high-concurrency n8n workflow nodes processing sensitive, real-time enterprise data requires robust sandbox isolation, self-healing databases, and zero-latency container communications to prevent service choke points."
+        "title": "Isolating Workflows at Scale",
+        "description": "Running hundreds of concurrent automation workflows against sensitive, real-time enterprise data meant no client's process could ever be allowed to interfere with another's."
       },
       {
-        "title": "GDPR Compliance & Critical Data Security",
-        "description": "Handling critical company knowledge bases (RAG - Retrieval-Augmented Generation) and automated lead qualifications demands strict GDPR-compliant server architecture, restricted data routes, and military-grade database security."
+        "title": "GDPR Compliance as a Hard Requirement",
+        "description": "Handling company knowledge bases and automated lead data for DACH enterprises meant the server architecture had to be GDPR-compliant by design, not bolted on afterward."
       },
       {
-        "title": "Continuous Integration & Zero-Downtime Infrastructure",
-        "description": "Maintaining 99.99% high availability and seamless rolling updates across dynamic multi-container applications (Next.js storefront, Payload CMS API, PostgreSQL database clusters, and n8n runners) without interrupting live business integrations."
+        "title": "Zero-Downtime at the Infrastructure Level",
+        "description": "The platform's many moving services all needed to update independently and reliably, without ever interrupting a client's live business integrations."
       }
     ],
-    "approach": "To deliver an enterprise-grade infrastructure, I architected and deployed a highly redundant, self-healing Kubernetes (K8s) cluster that containerized every operational node. I integrated PostgreSQL database clusters with automated replication and failover, and designed strict data-isolation boundaries for multi-tenant n8n workflow engines. To address security, I built strict GDPR-compliant private networks with origin protection inside the cluster. Finally, I established custom CI/CD pipelines via GitHub Actions, reducing deployment times by over 40% while maintaining absolute reliability for critical automated pipelines.",
+    "approach": "I designed and deployed a redundant, self-healing infrastructure that isolates every client's workflows from every other's, with automated database failover so a single node issue never becomes an outage. Compliance was built into the network architecture itself rather than layered on top. On top of that, I set up an automated CI/CD pipeline that cut deployment time by over 40% while keeping the platform's always-on automations running without interruption.",
     "outcomes": [
       {
         "value": "40%+",
@@ -59,19 +59,19 @@
     "overview": "Nextise est un écosystème d'automatisation basé sur l'IA et le SaaS, conçu pour transformer les opérations commerciales des moyennes et grandes entreprises de la région DACH. Fonctionnant comme une véritable centrale technologique, la plateforme intègre des LLM personnalisés et conformes au RGPD, des assistants de vente autonomes et des workflows d'entreprise complexes (propulsés par n8n et Next.js). En remplaçant les processus manuels par des nœuds d'automatisation hautement sécurisés et auto-réparateurs, Nextise permet à ses clients de réaliser des économies opérationnelles majeures.",
     "challenges": [
       {
-        "title": "Isolation des Processus & Mise à l'Échelle",
-        "description": "L'exécution de centaines de flux de travail n8n simultanés traitant des données d'entreprise hautement sensibles exigeait une isolation robuste en sandbox, des bases de données auto-réparatrices et un routage de conteneurs à latence zéro."
+        "title": "Isoler les Workflows à Grande Échelle",
+        "description": "Exécuter des centaines de workflows d'automatisation simultanés sur des données d'entreprise sensibles imposait qu'aucun processus client ne puisse jamais interférer avec celui d'un autre."
       },
       {
-        "title": "Conformité RGPD & Sécurité des Données",
-        "description": "La gestion des bases de connaissances internes de l'entreprise (systèmes RAG) et la qualification automatisée des leads nécessitaient une architecture serveur strictement conforme au RGPD et des chemins de données cryptés."
+        "title": "Le RGPD comme Exigence Non-Négociable",
+        "description": "Traiter les bases de connaissances et les données de prospection pour des entreprises de la zone DACH exigeait une architecture serveur conforme au RGPD dès la conception, pas ajoutée après coup."
       },
       {
-        "title": "Intégration Continue & Maintenance d'Infrastructure",
-        "description": "Assurer une haute disponibilité de 99,99 % et des mises à jour fluides sans interruption de service sur des architectures multi-conteneurs dynamiques (Next.js, Payload CMS, clusters PostgreSQL et serveurs n8n)."
+        "title": "Zéro Interruption au Niveau Infrastructure",
+        "description": "Les nombreux services de la plateforme devaient pouvoir être mis à jour indépendamment et de façon fiable, sans jamais interrompre les intégrations métier actives d'un client."
       }
     ],
-    "approach": "Pour fournir une infrastructure de niveau entreprise, j'ai conçu et déployé un cluster Kubernetes (K8s) hautement redondant et auto-réparateur conteneurisant chaque nœud opérationnel. J'ai configuré des clusters PostgreSQL avec réplication automatique et basculement (failover), et délimité des frontières d'isolation réseau strictes pour les moteurs n8n. J'ai également conçu des réseaux privés conformes au RGPD avec des passerelles de sécurité internes. Enfin, j'ai orchestré des pipelines CI/CD personnalisés via GitHub Actions, réduisant les temps de déploiement de plus de 40 % tout en garantissant une fiabilité absolue.",
+    "approach": "J'ai conçu et déployé une infrastructure redondante et auto-réparatrice qui isole les workflows de chaque client de ceux des autres, avec un basculement automatique des bases de données pour qu'un incident sur un nœud ne devienne jamais une interruption de service. La conformité a été intégrée directement dans l'architecture réseau plutôt qu'ajoutée en surcouche. En complément, j'ai mis en place un pipeline CI/CD automatisé qui a réduit les temps de déploiement de plus de 40 %, tout en maintenant les automatisations actives de la plateforme sans interruption.",
     "outcomes": [
       {
         "value": "40%+",
