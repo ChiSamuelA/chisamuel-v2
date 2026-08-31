@@ -1,0 +1,98 @@
+{
+  "slug": "wexperience",
+  "n": "05",
+  "year": "2026",
+  "tag": "Culture · Cross-Border Commerce",
+  "role": "Full-Stack Engineer & DevOps Lead",
+  "stack": "Next.js · Laravel · MySQL",
+  "href": "https://we-xperience.com",
+  "client": "WeXperience",
+  "duration": "Jun 2026 - Present",
+  "status": "In Production",
+  "featured": true,
+  "order": 5,
+  "en": {
+    "name": "WeXperience",
+    "tagline": "A bilingual culture-and-commerce platform connecting African brands and creators with international markets — end to end, from code to infrastructure.",
+    "overview": "WeXperience is a platform built around real-world cultural and business events, connecting African entrepreneurs, brands, and creators with international audiences and investors. Beyond a marketing site, it's a full content platform: a public site presenting live campaigns, a shop, and community content, backed by an admin dashboard that lets a non-technical team run everything themselves — publishing campaigns, managing brand showcases, and updating investor content without ever touching code.",
+    "challenges": [
+      {
+        "title": "One Platform, Two Very Different Audiences",
+        "description": "The public site needed to feel cinematic and fast for visitors and investors, while the team behind it needed a genuinely usable dashboard to manage campaigns, media, and multilingual content without developer help for every change."
+      },
+      {
+        "title": "Real Events, Real Deadlines",
+        "description": "Campaigns like the Senegal Is Calling NYC activation involve physical logistics — press dinners, fan zones, investor sessions — where programme details and content can change right up to the event. The platform had to support instant updates with zero downtime."
+      },
+      {
+        "title": "Bilingual by Default, Not as an Afterthought",
+        "description": "Every piece of content — campaigns, testimonials, blog posts, investor materials — needed to exist cleanly in both French and English from day one, without content drifting out of sync between languages over time."
+      }
+    ],
+    "approach": "I designed and built the platform as three coordinated applications sharing a single source of truth: a versioned API at the core, a public-facing site built for speed and storytelling, and an admin dashboard purpose-built for the team's day-to-day — publishing campaigns, reordering homepage content, managing brand and testimonial showcases, and keeping French and English content in sync, all without a single deploy. I handled the entire stack myself, from the application architecture through to the infrastructure it runs on, so the platform could go from zero to a live, bilingual, multi-campaign product running real events like the Senegal Is Calling NYC takeover.",
+    "outcomes": [
+      {
+        "value": "3",
+        "label": "Coordinated applications (public site, admin dashboard, API) sharing one source of truth"
+      },
+      {
+        "value": "FR/EN",
+        "label": "Fully bilingual experience across every public content type"
+      },
+      {
+        "value": "Zero-Deploy",
+        "label": "Campaigns and content publish live without a code release"
+      },
+      {
+        "value": "Live",
+        "label": "Powering real-world activations, including a New York campaign launch"
+      }
+    ],
+    "gallery": [
+      { "imageName": "wexperience-1.jpg", "caption": "WeXperience homepage showcasing the Senegal Is Calling campaign" },
+      { "imageName": "wexperience-2.jpg", "caption": "Admin dashboard for managing campaigns, brands, and bilingual content" }
+    ]
+  },
+  "fr": {
+    "name": "WeXperience",
+    "tagline": "Une plateforme bilingue de culture et de commerce connectant les marques et créateurs africains aux marchés internationaux — de la conception au déploiement.",
+    "overview": "WeXperience est une plateforme construite autour d'événements culturels et business réels, connectant entrepreneurs, marques et créateurs africains à des audiences et investisseurs internationaux. Au-delà d'un simple site vitrine, c'est une véritable plateforme de contenu : un site public présentant des campagnes en direct, une boutique et du contenu communautaire, appuyé par un tableau de bord d'administration permettant à une équipe non technique de tout piloter elle-même — publication de campagnes, gestion des vitrines de marques, mise à jour du contenu investisseurs — sans jamais toucher au code.",
+    "challenges": [
+      {
+        "title": "Une Plateforme, Deux Publics Très Différents",
+        "description": "Le site public devait rester cinématographique et rapide pour les visiteurs et investisseurs, pendant que l'équipe derrière avait besoin d'un tableau de bord réellement utilisable pour gérer campagnes, médias et contenu multilingue sans dépendre d'un développeur à chaque changement."
+      },
+      {
+        "title": "Des Événements Réels, des Délais Réels",
+        "description": "Des campagnes comme l'activation Senegal Is Calling à New York impliquent une logistique physique — dîners de presse, fan zones, sessions investisseurs — où le programme peut changer jusqu'au dernier moment. La plateforme devait permettre des mises à jour instantanées, sans interruption."
+      },
+      {
+        "title": "Le Bilinguisme Dès la Conception",
+        "description": "Chaque contenu — campagnes, témoignages, articles de blog, matériel investisseurs — devait exister proprement en français et en anglais dès le départ, sans que les deux langues ne finissent par diverger avec le temps."
+      }
+    ],
+    "approach": "J'ai conçu et développé la plateforme comme trois applications coordonnées partageant une seule source de vérité : une API versionnée au cœur du système, un site public pensé pour la vitesse et le storytelling, et un tableau de bord d'administration conçu pour le quotidien de l'équipe — publication de campagnes, réorganisation du contenu de la page d'accueil, gestion des vitrines de marques et témoignages, le tout en gardant le français et l'anglais synchronisés, sans déploiement à chaque changement. J'ai géré l'ensemble de la stack moi-même, de l'architecture applicative jusqu'à l'infrastructure, pour faire passer la plateforme de zéro à un produit bilingue en production, portant de véritables événements comme l'activation Senegal Is Calling à New York.",
+    "outcomes": [
+      {
+        "value": "3",
+        "label": "Applications coordonnées (site public, tableau de bord, API) partageant une même source de vérité"
+      },
+      {
+        "value": "FR/EN",
+        "label": "Expérience entièrement bilingue sur tous les types de contenu public"
+      },
+      {
+        "value": "Zéro Déploiement",
+        "label": "Les campagnes et contenus sont publiés en direct sans mise en production"
+      },
+      {
+        "value": "En Production",
+        "label": "Une plateforme qui porte de vrais événements, dont un lancement de campagne à New York"
+      }
+    ],
+    "gallery": [
+      { "imageName": "wexperience-1.jpg", "caption": "Page d'accueil WeXperience présentant la campagne Senegal Is Calling" },
+      { "imageName": "wexperience-2.jpg", "caption": "Tableau de bord d'administration pour gérer campagnes, marques et contenu bilingue" }
+    ]
+  }
+}

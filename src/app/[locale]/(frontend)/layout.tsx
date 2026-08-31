@@ -84,7 +84,7 @@ export default async function RootLayout(props: {
       'addressLocality': 'Yaoundé',
       'addressCountry': 'CM',
     },
-    'email': 'me@chisamuel.com',
+    'email': 'chisamuelapeng@gmail.com',
     'telephone': '+237659224784',
     'knowsAbout': [
       'Software Engineering',

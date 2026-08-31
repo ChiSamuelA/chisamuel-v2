@@ -14,8 +14,8 @@ const ReachMeCards = ({ messages }: ReachMeCardsProps) => {
   const cards = [
     {
       label: messages.email,
-      value: 'me@chisamuel.com',
-      link: 'mailto:me@chisamuel.com',
+      value: 'chisamuelapeng@gmail.com',
+      link: 'mailto:chisamuelapeng@gmail.com',
     },
     {
       label: messages.phone,

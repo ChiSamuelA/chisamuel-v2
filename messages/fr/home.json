@@ -200,7 +200,10 @@
       "project": "PARLEZ-MOI DE VOTRE PROJET",
       "projectPlaceholder": "Une ligne ou deux sur le projet, le calendrier ou le rôle...",
       "deliveryInfo": "→ Livré directement à {email}",
-      "submit": "Envoyer le message →"
+      "submit": "Envoyer le message →",
+      "submitting": "Envoi en cours...",
+      "success": "→ Message envoyé — je vous répondrai bientôt.",
+      "error": "Une erreur est survenue. Veuillez réessayer."
     },
     "availability": {
       "label": "— DISPONIBILITÉ —",

@@ -1,0 +1,98 @@
+{
+  "slug": "targetdesk",
+  "n": "06",
+  "year": "2026",
+  "tag": "B2B SaaS · CRM & Accounting",
+  "role": "Full-Stack Architect & DevOps Lead",
+  "stack": "Angular · Laravel · MySQL",
+  "href": "https://targetdesk.fr",
+  "client": "TargetDesk",
+  "duration": "Jan 2026 - Apr 2026",
+  "status": "In Production",
+  "featured": true,
+  "order": 6,
+  "en": {
+    "name": "TargetDesk",
+    "tagline": "A multi-tenant back-office platform unifying CRM, call-center operations, and French GAAP-compliant accounting in one system.",
+    "overview": "TargetDesk is a full back-office SaaS platform built for teams that need their CRM, call-center, and accounting to actually talk to each other instead of living in three disconnected tools. A single company can run client and supplier management, a live call-center with supervisor and manager dashboards, task and project tracking, and a complete French GAAP-compliant accounting suite — chart of accounts, journal entries, general ledger, trial balance, bank reconciliation, and invoicing — all under one roof, with every team's data fully isolated from every other tenant on the platform.",
+    "challenges": [
+      {
+        "title": "True Multi-Tenant Isolation, Not Just Filtered Views",
+        "description": "Every client, invoice, and call record belongs to exactly one company on a shared platform. Data isolation had to be enforced at the request level itself, not left to individual queries to remember to filter correctly."
+      },
+      {
+        "title": "Accounting That Has to Be Exactly Right",
+        "description": "Double-entry bookkeeping doesn't tolerate approximation. Building journal entries, a general ledger, trial balance, and bank reconciliation in-house — to French accounting standards — meant the underlying logic had to be correct by construction, not just correct in the common case."
+      },
+      {
+        "title": "Permissions Fine-Grained Enough for Real Teams",
+        "description": "Different roles needed different slices of the same data — a rep managing their own clients, a team lead seeing their team's, an admin seeing everything. That meant permissions scoped three ways per action, consistently enforced across both the API and the interface."
+      }
+    ],
+    "approach": "I built TargetDesk as a Laravel API and an Angular frontend designed together as one system, sharing the same permission model on both ends. Every authenticated request runs through company-scoping middleware that resolves the current tenant and applies it globally, so isolation is guaranteed at the framework level rather than relied upon per-query — with a clean bypass path for platform-level super-admin access.\n\nOn top of that, I implemented a full accounting engine modeled on the French Plan Comptable Général: journal entries, general ledger, trial balance, and bank-transaction reconciliation, alongside supplier invoicing and a rule-based commission engine that calculates, splits, and audits commissions automatically. Access control runs on a permission system with dozens of module-level actions, each independently scopable to System, Team, or Personal — enforced identically by the API and by the Angular client, down to matching permission-string formats. The call-center module integrates with Ringover for live call and SMS history, feeding directly into complaint tracking and supervisor/manager reporting.",
+    "outcomes": [
+      {
+        "value": "1 Platform",
+        "label": "CRM, call-center, and accounting unified for multi-team, multi-tenant use"
+      },
+      {
+        "value": "62",
+        "label": "Granular permissions across 11 business modules, each scoped System / Team / Personal"
+      },
+      {
+        "value": "French GAAP",
+        "label": "In-house double-entry accounting suite: ledger, trial balance, bank reconciliation"
+      },
+      {
+        "value": "Live",
+        "label": "Real-time VoIP call-center integration powering daily operations"
+      }
+    ],
+    "gallery": [
+      { "imageName": "targetdesk-1.jpg", "caption": "TargetDesk dashboard showing client, call-center, and finance modules" },
+      { "imageName": "targetdesk-2.jpg", "caption": "Accounting module with chart of accounts and bank reconciliation" }
+    ]
+  },
+  "fr": {
+    "name": "TargetDesk",
+    "tagline": "Une plateforme back-office multi-tenant réunissant CRM, centre d'appels et comptabilité conforme au plan comptable français.",
+    "overview": "TargetDesk est une plateforme SaaS back-office complète, pensée pour les équipes qui ont besoin que leur CRM, leur centre d'appels et leur comptabilité communiquent réellement entre eux plutôt que de vivre dans trois outils séparés. Une même entreprise peut gérer ses clients et fournisseurs, piloter un centre d'appels avec tableaux de bord superviseur et manager, suivre tâches et projets, et tenir une comptabilité complète conforme au Plan Comptable Général français — plan de comptes, écritures, grand livre, balance générale, rapprochement bancaire et facturation — le tout sous un même toit, avec une isolation totale des données entre chaque entreprise cliente de la plateforme.",
+    "challenges": [
+      {
+        "title": "Une Isolation Multi-Tenant Réelle, Pas de Simples Filtres",
+        "description": "Chaque client, facture et appel appartient à une seule entreprise sur une plateforme partagée. L'isolation des données devait être garantie au niveau de la requête elle-même, sans dépendre de chaque requête individuelle pour filtrer correctement."
+      },
+      {
+        "title": "Une Comptabilité qui Doit Être Exacte",
+        "description": "La comptabilité en partie double ne tolère pas l'approximation. Construire en interne les écritures, le grand livre, la balance générale et le rapprochement bancaire, selon les normes comptables françaises, exigeait une logique juste par construction, pas seulement dans le cas général."
+      },
+      {
+        "title": "Des Permissions Assez Fines pour de Vraies Équipes",
+        "description": "Des rôles différents avaient besoin d'accéder à des portions différentes des mêmes données — un commercial gérant ses propres clients, un chef d'équipe voyant ceux de son équipe, un administrateur voyant tout. Cela exigeait des permissions à trois niveaux de portée par action, appliquées de façon cohérente sur l'API comme sur l'interface."
+      }
+    ],
+    "approach": "J'ai conçu TargetDesk comme une API Laravel et un frontend Angular pensés ensemble comme un seul système, partageant le même modèle de permissions des deux côtés. Chaque requête authentifiée passe par un middleware de scoping par entreprise qui résout le tenant courant et l'applique globalement, garantissant l'isolation au niveau du framework plutôt que de dépendre de chaque requête — avec un contournement propre pour les accès super-admin au niveau plateforme.\n\nEn complément, j'ai développé un moteur comptable complet basé sur le Plan Comptable Général français : écritures, grand livre, balance générale et rapprochement des transactions bancaires, ainsi que la facturation fournisseurs et un moteur de commissions basé sur des règles, capable de calculer, répartir et auditer automatiquement chaque commission. Le contrôle d'accès repose sur un système de permissions couvrant des dizaines d'actions par module, chacune indépendamment configurable en portée Système, Équipe ou Personnelle — appliquée de façon identique par l'API et par le client Angular, jusqu'au format des chaînes de permission. Le module centre d'appels s'intègre à Ringover pour l'historique des appels et SMS en temps réel, alimentant directement le suivi des réclamations et les rapports superviseur/manager.",
+    "outcomes": [
+      {
+        "value": "1 Plateforme",
+        "label": "CRM, centre d'appels et comptabilité unifiés pour un usage multi-équipe et multi-tenant"
+      },
+      {
+        "value": "62",
+        "label": "Permissions granulaires sur 11 modules métier, chacune scopée Système / Équipe / Personnel"
+      },
+      {
+        "value": "Plan Comptable Français",
+        "label": "Suite comptable en partie double développée en interne : grand livre, balance, rapprochement bancaire"
+      },
+      {
+        "value": "En Production",
+        "label": "Intégration téléphonie VoIP en temps réel au cœur des opérations quotidiennes"
+      }
+    ],
+    "gallery": [
+      { "imageName": "targetdesk-1.jpg", "caption": "Tableau de bord TargetDesk affichant les modules client, centre d'appels et finance" },
+      { "imageName": "targetdesk-2.jpg", "caption": "Module comptable avec plan de comptes et rapprochement bancaire" }
+    ]
+  }
+}

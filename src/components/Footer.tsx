@@ -7,10 +7,10 @@ const Footer = () => {
         {/* Left group */}
         <div className="flex flex-row gap-6 flex-wrap">
           <a 
-            href="mailto:me@chisamuel.com" 
+            href="mailto:chisamuelapeng@gmail.com"
             className="text-paper hover:opacity-70 transition-opacity"
           >
-            me@chisamuel.com
+            chisamuelapeng@gmail.com
           </a>
           <a 
             href="tel:+237659224784" 

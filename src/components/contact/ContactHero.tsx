@@ -50,7 +50,7 @@ const ContactHero = ({ messages }: ContactHeroProps) => {
           </p>
 
           <a 
-            href="mailto:me@chisamuel.com" 
+            href="mailto:chisamuelapeng@gmail.com"
             className="inline-block font-mono text-[12px] text-ink-deep bg-copper px-8 py-4 rounded hover:bg-copper-dim transition-colors duration-300 tracking-wide font-medium"
           >
             → {messages.cta}
