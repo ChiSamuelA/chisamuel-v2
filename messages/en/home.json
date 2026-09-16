@@ -118,14 +118,24 @@
       "label": "§ 02 — Experience",
       "items": [
         {
-          "title": "Software Engineer",
+          "title": "Software Engineer · DevOps · AI Automation Lead",
           "date": "Jan 2025 — Present",
           "org": "Nextise GmbH · Stuttgart, DE (Remote)",
           "bullets": [
-            "Leading full-stack development of BarriereHilfe, a 3-tier accessibility platform for the German market, ensuring WCAG 2.2 compliance.",
-            "Orchestrating deployment of multiple SaaS products on DigitalOcean Kubernetes with self-healing clusters and automated scaling.",
-            "Reduced deployment time by 40% through custom GitHub Actions CI/CD pipelines and infrastructure-as-code.",
-            "Modernizing legacy systems with Next.js SSR and edge caching, significantly improving core web vitals and SEO performance."
+            "Leading full-stack development of BarriereHilfe, a 3-tier WCAG-compliant accessibility platform, alongside kodschul.de and the Nextise corporate website — modernizing legacy systems with Next.js SSR and edge caching to sharpen core web vitals and SEO.",
+            "Own the production Kubernetes cluster on DigitalOcean end-to-end — cluster scaling, migrating multiple production sites off a failing droplet, and resolving the DNS propagation, SSL validation, and persistent-volume issues along the way.",
+            "Author every GitHub Actions CI/CD pipeline across the team's projects, cutting deployment time by 40% through custom workflows and infrastructure-as-code.",
+            "Lead development of Kontakly Databee, an AI-driven B2B lead-generation pipeline for the DACH market — site-specific scrapers, LinkedIn enrichment, and a Gemini AI decision-maker finder."
+          ]
+        },
+        {
+          "title": "Full Stack Developer",
+          "date": "Feb 2026 — Aug 2026",
+          "org": "TargetPoint · Paris, France (Remote Contract)",
+          "bullets": [
+            "Built the We Xperience public website in Next.js, integrating PrestaShop for product management via a BFF pattern, with full EN/FR internationalization.",
+            "Developed backend APIs and Angular/Laravel frontend integrations for the Finance and Call Center modules of TargetDesk, the company's multi-tenant CRM, accounting, and call-center platform.",
+            "Delivered client work for Xalimart Group: TargetPoint-Signature, a Laravel + Next.js email-signature management SaaS with onboarding, domain verification, and cascade template assignment, plus their multilingual corporate website and CMS in Next.js and Payload CMS, deployed on a bare-metal Linux VPS."
           ]
         },
         {
