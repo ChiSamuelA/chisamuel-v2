@@ -82,6 +82,8 @@ async function syncProjects() {
 
   console.log(`📂 Found ${files.length} project JSON files. Starting synchronization...\n`)
 
+  let hadFailure = false
+
   for (const file of files) {
     const filePath = path.join(projectsDir, file)
     console.log(`📄 Processing project: ${file}`)
@@ -91,6 +93,7 @@ async function syncProjects() {
       projectData = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
     } catch (err) {
       console.error(`❌ Error parsing JSON file ${file}:`, err)
+      hadFailure = true
       continue
     }
 
@@ -98,6 +101,7 @@ async function syncProjects() {
 
     if (!slug) {
       console.error(`❌ Skip: File ${file} is missing the "slug" field.`)
+      hadFailure = true
       continue
     }
 
@@ -238,8 +242,14 @@ async function syncProjects() {
       }
     } catch (dbError) {
       console.error(`❌ Database Error processing project "${slug}":`, dbError)
+      hadFailure = true
     }
     console.log('--------------------------------------------------\n')
+  }
+
+  if (hadFailure) {
+    console.error('❌ Project Synchronization Finished With Errors — see ❌ lines above.')
+    process.exit(1)
   }
 
   console.log('🎉 Project Synchronization Finished Successfully!')
