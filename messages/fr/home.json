@@ -11,10 +11,10 @@
   },
   "about": {
     "label": "À PROPOS",
-    "headline": "Créer des produits qui sortent de bout en bout.",
-    "p1": "Ingénieur full-stack avec une {vision holistique} du cycle de vie : de l'{UI pixel-perfect} dans Figma aux {APIs de production}, du {déploiement de fonctionnalités} à la gestion de l'{infrastructure} sur laquelle elles tournent.",
-    "p2": "Je travaille sur l'ensemble de la {stack complète} sans changer de contexte. Les décisions de design informent l'{architecture backend}. Les contraintes DevOps façonnent les {choix frontend}. {Tout est connecté}.",
-    "p3": "{Fondateur} de {Solumentics}, partenaire de {PME} et d'institutions internationales à travers l'Europe et l'Afrique pour construire des {logiciels qui comptent vraiment}.",
+    "headline": "Je construis le produit, et la plateforme qui le fait tourner.",
+    "p1": "Ingénieur full-stack avec une {vision holistique} du cycle de vie : de l'{UI pixel-perfect} dans Figma aux {API de production}, du SSR et du cache en edge jusqu'aux {clusters Kubernetes} et pipelines CI/CD sur lesquels tout repose.",
+    "p2": "Je travaille sur l'ensemble de la {stack} sans changer de contexte. Les décisions de design informent le {modèle de données}. Les contraintes d'infrastructure façonnent la {stratégie de rendu}. Next.js, Laravel et Angular en surface ; Docker, Kubernetes et GitHub Actions en dessous. {Tout est connecté}.",
+    "p3": "{Fondateur} de {Solumentics}, je conçois des SaaS multi-tenant, de l'e-commerce et de l'automatisation IA pour des {PME internationales} et des institutions : plateformes conformes WCAG, workflows LLM et pipelines qui ont réduit le temps de déploiement de 40 %. Des {logiciels qui comptent vraiment}.",
     "quote": "Je ne me contente pas d'écrire du code. Je suis responsable du résultat."
   },
   "featured": {

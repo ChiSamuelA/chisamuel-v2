@@ -1,4 +1,7 @@
 import React from 'react'
+import Image from 'next/image'
+import Reveal from '@/components/Reveal'
+import portrait from '../../../public/version_2/about-section.jpg'
 
 interface AboutStripProps {
   label: string
@@ -6,77 +9,72 @@ interface AboutStripProps {
   p1: string
   p2: string
   p3: string
-  quote: string
 }
 
-export default function AboutStrip({ label, headline, p1, p2, p3, quote }: AboutStripProps) {
-  
-  // Helper to highlight words in headline (italic/copper)
-  // For EN: "ship", For FR: "sortent"
-  const formatHeadline = (text: string) => {
-    const targetWords = ['ship', 'sortent']
-    
-    for (const word of targetWords) {
-      if (text.includes(word)) {
-        const parts = text.split(word)
-        return (
-          <>
-            {parts[0]}
-            <span className="italic text-copper">{word}</span>
-            {parts[1]}
-          </>
-        )
-      }
-    }
-    return text
-  }
+// Copy still marks highlights with {braces}; the v2 design renders it plain
+const plain = (text: string) => text.replace(/[{}]/g, '')
 
-  // Helper to format body text with highlights {phrase} -> text-copper
-  const formatBody = (text: string) => {
-    const parts = text.split(/\{|\}/)
-    return parts.map((part, i) => {
-      // Every odd index is content inside {}
-      if (i % 2 === 1) {
-        return <span key={i} className="text-copper font-medium">{part}</span>
-      }
-      return part
-    })
-  }
-
+export default function AboutStrip({ label, headline, p1, p2, p3 }: AboutStripProps) {
   return (
-    <section id="about" className="scroll-mt-24 bg-ink-deep border-t border-[oklch(0.2_0.005_80)] px-5 md:px-14 lg:px-[72px] py-[56px] md:py-[80px] lg:py-[120px]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
-        
-        {/* Left Column: Label + Headline */}
+    <section id="about" className="scroll-mt-24 bg-mist px-5 md:px-14 lg:px-[72px] py-20 md:py-28 lg:py-36">
+      <div className="mx-auto max-w-[1120px] grid grid-cols-1 lg:grid-cols-2 items-center gap-14 lg:gap-20">
+
+        {/* Left column — label, headline, body */}
         <div>
-          <p className="font-mono text-[11px] text-copper uppercase tracking-[2px] mb-6">
-            {label}
-          </p>
-          <h2 className="font-serif font-normal text-paper leading-[1.05] tracking-[-0.025em]
-            text-[36px]
-            md:text-[48px]
-            lg:text-[72px]
-            text-pretty"
-          >
-            {formatHeadline(headline)}
-          </h2>
+          <Reveal>
+            <p className="inline-block rounded-md bg-lilac px-2.5 py-1 font-body text-[11px] md:text-[12px] uppercase tracking-[0.04em] text-brand">
+              {label}
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <h2 className="mt-6 max-w-[440px] font-heading font-bold text-charcoal leading-[1.15] tracking-[-0.02em]
+              text-[28px] md:text-[34px] lg:text-[40px]"
+            >
+              {headline}
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.16}>
+            <div className="mt-6 max-w-[480px] flex flex-col gap-5 font-body text-[14px] md:text-[15px] leading-[1.65] text-charcoal">
+              <p>{plain(p1)}</p>
+              <p>{plain(p2)}</p>
+              <p>{plain(p3)}</p>
+            </div>
+          </Reveal>
         </div>
 
-        {/* Right Column: Body + Pull-quote */}
-        <div className="flex flex-col justify-center gap-5 lg:gap-5 text-[16px] leading-[1.65] text-paper-dim">
-          <p className="text-pretty">
-            {formatBody(p1)}
-          </p>
-          <p className="text-pretty">
-            {formatBody(p2)}
-          </p>
-          <p className="text-pretty">
-            {formatBody(p3)}
-          </p>
-          
-          <p className="font-serif italic text-copper text-[22px] mt-3 lg:mt-5 text-pretty leading-snug">
-            &quot;{quote}&quot;
-          </p>
+        {/* Right column — photo card + signature */}
+        <div className="relative w-full max-w-[420px] mx-auto lg:mr-0">
+          <Reveal variant="scale" duration={1}>
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+              <Image
+                src={portrait}
+                alt="Chi Samuel Apeng"
+                fill
+                placeholder="blur"
+                sizes="(min-width: 1024px) 420px, 90vw"
+                className="object-cover object-top"
+              />
+              {/* Bottom fade into the section background */}
+              <div
+                className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-mist via-mist/70 to-transparent pointer-events-none"
+                aria-hidden="true"
+              />
+            </div>
+          </Reveal>
+
+          {/* Signature — written in left to right after the card appears */}
+          <div className="absolute inset-x-0 bottom-[4%] flex justify-center pointer-events-none" aria-hidden="true">
+            <Reveal variant="wipe" delay={0.6} duration={1.4}>
+              <p
+                className="font-signature whitespace-nowrap text-charcoal text-[44px] md:text-[56px] leading-none"
+                style={{ textShadow: '0 0 18px #FFFFFF, 0 0 36px #FFFFFF, 0 0 6px #FFFFFF' }}
+              >
+                Chi Samuel A.
+              </p>
+            </Reveal>
+          </div>
         </div>
 
       </div>

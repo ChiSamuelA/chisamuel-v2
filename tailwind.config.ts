@@ -29,6 +29,7 @@ export default {
         charcoal: "#1E1E1E",
         lilac:    "#EEE3FF",
         glow:     "#C17EFF", // design uses it at 50% alpha → bg-glow/50
+        mist:     "#FBF9FF", // light lavender section background
       },
       fontFamily: {
         serif: ["var(--font-serif)", '"Instrument Serif"', "serif"],
@@ -37,6 +38,7 @@ export default {
         // v2 fonts
         heading: ["var(--font-heading)", '"Hanken Grotesk"', "system-ui", "sans-serif"],
         body:    ["var(--font-body)", '"Poppins"', "system-ui", "sans-serif"],
+        signature: ['"Designer Signature"', "cursive"],
       },
       letterSpacing: {
         "display":       "-0.04em",

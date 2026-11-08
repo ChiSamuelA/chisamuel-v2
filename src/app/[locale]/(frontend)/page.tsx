@@ -53,7 +53,6 @@ export default async function HomePage(props: {
         p1={messages!.home.about.p1}
         p2={messages!.home.about.p2}
         p3={messages!.home.about.p3}
-        quote={messages!.home.about.quote}
       />
       <StackStrip />
       <FeaturedWork 

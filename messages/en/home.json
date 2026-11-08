@@ -11,10 +11,10 @@
   },
   "about": {
     "label": "ABOUT",
-    "headline": "Building products that ship end-to-end.",
-    "p1": "Full-stack engineer with a {holistic view} of the lifecycle : from {pixel-perfect UI} in Figma to {production APIs}, from {shipping features} to managing the {infrastructure} they run on.",
-    "p2": "I work across the {full stack} without switching context. Design decisions inform {backend architecture}. DevOps constraints shape {frontend choices}. {Everything is connected}.",
-    "p3": "{Founder} of {Solumentics}, partnered with {international SMEs} and institutions across Europe and Africa to build {software that actually matters}.",
+    "headline": "I build the product, and the platform it runs on.",
+    "p1": "Full-stack engineer with a {holistic view} of the lifecycle: from {pixel-perfect UI} in Figma to {production APIs}, from SSR and edge caching to the {Kubernetes clusters} and CI/CD pipelines everything runs on.",
+    "p2": "I work across the {full stack} without switching context. Design decisions inform the {data model}. Infrastructure constraints shape the {rendering strategy}. Next.js, Laravel and Angular on top; Docker, Kubernetes and GitHub Actions underneath. {Everything is connected}.",
+    "p3": "{Founder} of {Solumentics}, building multi-tenant SaaS, e-commerce and AI automation for {international SMEs} and institutions: WCAG-compliant platforms, LLM workflows, and pipelines that cut deploy time by 40%. {Software that actually matters}.",
     "quote": "I don't just write code. I own the outcome."
   },
   "featured": {
