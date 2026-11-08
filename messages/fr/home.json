@@ -1,6 +1,9 @@
 {
   "hero": {
-    "label": "Chi Samuel A. . MMXXVI",
+    "label": "Chi Samuel A. · MMXXVI",
+    "title": "Full-Stack Developer\n& Cloud Architect",
+    "ctaProjects": "Explorer mes projets",
+    "ctaCv": "Voir mon CV",
     "headline": "Ingénieur de\nchoses qui\nsortent vraiment.",
     "tagline": "Ingénieur full-stack. Je construis des SaaS de production de Figma à Kubernetes. Basé à Yaoundé, livrant globalement.",
     "scroll": "↓ Faire défiler pour explorer",

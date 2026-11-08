@@ -39,12 +39,13 @@ export default async function HomePage(props: {
 
   return (
     <>
-      <Hero 
+      <Hero
+        locale={locale}
         label={messages!.home.hero.label}
-        headline={messages!.home.hero.headline}
+        title={messages!.home.hero.title}
         tagline={messages!.home.hero.tagline}
-        scroll={messages!.home.hero.scroll}
-        projects={messages!.home.hero.projects}
+        ctaProjects={messages!.home.hero.ctaProjects}
+        ctaCv={messages!.home.hero.ctaCv}
       />
       <AboutStrip
         label={messages!.home.about.label}

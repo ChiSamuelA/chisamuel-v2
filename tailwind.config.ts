@@ -48,9 +48,29 @@ export default {
           from: { opacity: "0", transform: "translateY(-100%)" },
           to:   { opacity: "1", transform: "translateY(0)" },
         },
+        "rise-in": {
+          from: { opacity: "0", transform: "translateY(16px)" },
+          to:   { opacity: "1", transform: "translateY(0)" },
+        },
+        "line-up": {
+          from: { transform: "translateY(105%)" },
+          to:   { transform: "translateY(0)" },
+        },
+        "portrait-in": {
+          from: { opacity: "0", transform: "translateY(8%)", filter: "blur(10px)" },
+          to:   { opacity: "1", transform: "translateY(0)", filter: "blur(0)" },
+        },
+        "glow-drift": {
+          from: { transform: "translate(0, 0) scale(1)" },
+          to:   { transform: "translate(6%, -8%) scale(1.15)" },
+        },
       },
       animation: {
         "nav-in": "nav-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "rise-in": "rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "line-up": "line-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "portrait-in": "portrait-in 1.1s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "glow-drift": "glow-drift 14s ease-in-out infinite alternate",
       },
     },
   },
