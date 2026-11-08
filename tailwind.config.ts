@@ -24,16 +24,33 @@ export default {
           DEFAULT: "oklch(0.72 0.16 55)",
           dim:     "oklch(0.55 0.12 55)",
         },
+        // v2 palette — lives alongside the dark tokens until every page is migrated
+        brand:    "#6514E8",
+        charcoal: "#1E1E1E",
+        lilac:    "#EEE3FF",
+        glow:     "#C17EFF", // design uses it at 50% alpha → bg-glow/50
       },
       fontFamily: {
         serif: ["var(--font-serif)", '"Instrument Serif"', "serif"],
         sans:  ["var(--font-sans)", '"Inter"', "system-ui", "sans-serif"],
         mono:  ["var(--font-mono)", '"JetBrains Mono"', "ui-monospace", "monospace"],
+        // v2 fonts
+        heading: ["var(--font-heading)", '"Hanken Grotesk"', "system-ui", "sans-serif"],
+        body:    ["var(--font-body)", '"Poppins"', "system-ui", "sans-serif"],
       },
       letterSpacing: {
         "display":       "-0.04em",
         "display-tight": "-0.06em",
         "label":          "0.12em",
+      },
+      keyframes: {
+        "nav-in": {
+          from: { opacity: "0", transform: "translateY(-100%)" },
+          to:   { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "nav-in": "nav-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
       },
     },
   },

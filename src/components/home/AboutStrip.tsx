@@ -44,7 +44,7 @@ export default function AboutStrip({ label, headline, p1, p2, p3, quote }: About
   }
 
   return (
-    <section className="bg-ink-deep border-t border-[oklch(0.2_0.005_80)] px-5 md:px-14 lg:px-[72px] py-[56px] md:py-[80px] lg:py-[120px]">
+    <section id="about" className="scroll-mt-24 bg-ink-deep border-t border-[oklch(0.2_0.005_80)] px-5 md:px-14 lg:px-[72px] py-[56px] md:py-[80px] lg:py-[120px]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
         
         {/* Left Column: Label + Headline */}

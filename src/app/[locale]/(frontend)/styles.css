@@ -9,6 +9,12 @@
   --paper-dim: oklch(0.88 0.005 80);
   --muted:     oklch(0.60 0.005 80);
   --copper:    oklch(0.72 0.16 55);
+
+  /* v2 palette */
+  --brand:     #6514E8;
+  --charcoal:  #1E1E1E;
+  --lilac:     #EEE3FF;
+  --glow:      #C17EFF80;
 }
 
 body {

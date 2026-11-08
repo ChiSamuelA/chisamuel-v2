@@ -1,4 +1,4 @@
-import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google'
+import { Hanken_Grotesk, Instrument_Serif, Inter, JetBrains_Mono, Poppins } from 'next/font/google'
 import React from 'react'
 import './styles.css'
 import { locales, type Locale, getMessages } from '@/i18n'
@@ -25,6 +25,20 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-mono',
+  display: 'swap',
+})
+
+// v2 fonts — titles / paragraphs
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-body',
   display: 'swap',
 })
 
@@ -109,7 +123,7 @@ export default async function RootLayout(props: {
   return (
     <html
       lang={locale}
-      className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable} ${hankenGrotesk.variable} ${poppins.variable}`}
       style={{ background: 'oklch(0.12 0.005 80)' }}
     >
       <body>
@@ -119,7 +133,7 @@ export default async function RootLayout(props: {
         />
         <Nav locale={locale} messages={messages!.home.nav} />
         <main>{children}</main>
-        <Footer />
+        <Footer locale={locale} nav={messages!.home.nav} messages={messages!.home.footer} />
       </body>
     </html>
   )

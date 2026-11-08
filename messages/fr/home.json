@@ -97,7 +97,19 @@
     "index": "Accueil",
     "work": "Études de cas",
     "cv": "CV",
-    "contact": "Contact"
+    "contact": "Contact",
+    "about": "À propos",
+    "projects": "Projets",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "language": "Langue"
+  },
+  "footer": {
+    "cta": "Construisons\nquelque chose\nensemble",
+    "navTitle": "Navigation",
+    "socialTitle": "Réseaux sociaux",
+    "timezoneLabel": "Fuseau horaire",
+    "location": "Yaoundé, Cameroun"
   },
   "cv": {
     "hero": {

@@ -97,7 +97,19 @@
     "index": "Index",
     "work": "Case studies",
     "cv": "CV",
-    "contact": "Contact"
+    "contact": "Contact",
+    "about": "About",
+    "projects": "Projects",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language"
+  },
+  "footer": {
+    "cta": "Let's build\nsomething\ntogether",
+    "navTitle": "Nav",
+    "socialTitle": "Social media",
+    "timezoneLabel": "Time zone",
+    "location": "Yaoundé, Cameroon"
   },
   "cv": {
     "hero": {
